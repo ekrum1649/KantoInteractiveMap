@@ -1,0 +1,50 @@
+﻿label_name,id,path_city,opacity,class,x_start,y_start,x_end,y_end
+Route 23,Route23,tan,0.4,location main route,50,70,80,280
+Route 22,Route22,tan,0.4,location main route,50,280,140,310
+Route 1,Route1,tan,0.4,location main route,140,170,170,290
+Route 2,Route2,tan,0.4,location main route,140,310,170,390
+Route 21,Route21,tan,0.4,location main route,140,420,170,520
+Route 3,r3primary,tan,0.4,location main route,170,140,370,170
+Route 3,r32,tan,0.4,location main route,340,110,370,140
+Route 3,r33,tan,0.4,location main route,340,80,465,110
+Route 4,Route4,tan,0.4,location main route,465,80,700,110
+Route 9,Route9,tan,0.4,location main route,730,80,930,110
+Route 25,Route25,tan,0.4,location main route,730,0,800,30
+Route 10,Route10,tan,0.4,location main route,900,110,930,200
+Route 12,Route12,tan,0.4,location main route,900,230,930,420
+Route 20,Route20,tan,0.4,location main route,170,520,580,550
+Route 19,Route19,tan,0.4,location main route,550,450,580,520
+Route 18,Route18,tan,0.4,location main route,290,420,550,450
+Route 15,Route15,tan,0.4,location main route,580,420,650,450
+Route 14,Route14,tan,0.4,location main route,650,390,680,450
+Route 13,Route13,tan,0.4,location main route,680,390,900,420
+Route 17,Route17,tan,0.4,location main route,290,230,320,420
+Route 16,Route16,tan,0.4,location main route,290,200,510,230
+Route 7,Route7,tan,0.4,location main route,540,200,700,230
+Route 8,Route8,tan,0.4,location main route,730,200,900,230
+Route 24,Route24,tan,0.4,location main route,700,0,730,80
+Route 5,Route5,tan,0.4,location main route,700,110,730,200
+Route 6,Route6,tan,0.4,location main route,700,230,730,300
+Route 11,Route11,tan,0.4,location main route,730,300,900,330
+Indigo Plateau,IndigoPlateau,red,1,location main city,50,40,80,70
+Pewter City,PewterCity,red,1,location main city,140,140,170,170
+Viridian City,ViridianCity,red,1,location main city,140,280,170,310
+Pallet Town,PalletTown,red,1,location main city,140,390,170,420
+Cinnabar Island,CinnabarIsland,red,1,location main city,140,520,170,550
+Cerulean City,CeruleanCity,red,1,location main city,700,80,730,110
+Saffron City,SaffronCity,red,1,location main city,700,200,730,230
+Celadon City,CeladonCity,red,1,location main city,510,200,540,230
+Lavender Town,LavenderTown,red,1,location main city,900,200,930,230
+Vermilion City,VermilionCity,red,1,location main city,700,300,730,330
+Fuchsia City,FuchsiaCity,red,1,location main city,550,420,580,450
+c22to23,c22to23,none,0,location corner,65,295,65,295
+lower3,lower3,none,0,location corner,355,155,355,155
+upper3,upper3,none,0,location corner,355,95,355,95
+toBills,toBills,none,0,location corner,715,15,715,15
+c11to12,c11to12,none,0,location corner,915,315,915,315
+c12to13,c12to13,none,0,location corner,915,405,915,405
+c13to14,c13to14,none,0,location corner,665,405,665,405
+c14to15,c14to15,none,0,location corner,665,435,665,435
+c17to18,c17to18,none,0,location corner,305,435,305,435
+c17to16,c17to16,none,0,location corner,305,215,305,215
+c19to20,c19to20,none,0,location corner,565,535,565,535

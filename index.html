@@ -1,0 +1,1570 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://d3js.org/topojson.v3.min.js"></script>
+  <style>
+    .header {
+      padding-bottom: 20px;
+      font-size: 100px;
+      background-color: #ffcb05;
+      width: var(--main-width-value);
+      text-align: center;
+      color: #3c5aa6;
+    }
+
+    .subtitle {
+      font-size: 38px;
+    }
+
+    .overview {
+      font-size: 25px;
+      background-color: #3c5aa6;
+      width: var(--main-width-value);
+      text-align: center;
+      color: #ffcb05;
+    }
+
+    .category,
+    .showAll {
+      height: 35px;
+      width: 100px;
+      color: white;
+      border: 1px solid white;
+      border-radius: 100px;
+      cursor: pointer;
+      font-variant: small-caps;
+      font-weight: bolder;
+      font-size: 20px;
+    }
+
+    .showAll {
+      width: 160px;
+      height: 60px;
+    }
+
+    .category:hover,
+    .showAll:hover {
+      border: 1px solid black;
+    }
+
+    #innerShowAll {
+      position: absolute;
+      left: 1125px;
+    }
+
+    .inner {
+      display: inline-block;
+      margin-right: 5px;
+      border: 0.5px solid black;
+      border-radius: 100px;
+      margin-bottom: 5px;
+    }
+
+    .outer,
+    #pokemonLbl,
+    #pokeLogo,
+    #VersionLbl,
+    .routeCardData {
+      display: block;
+    }
+
+    #buttons {
+      margin-left: 25px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+
+    .gridlines .domain {
+      display: none;
+    }
+
+    .gridlines line {
+      stroke: #bbb;
+    }
+
+    #typeChart,
+    #aside {
+      display: inline-block;
+    }
+
+    #aside {
+      position: relative;
+      left: 50px;
+      text-align: center;
+      border: 7px solid #fac42f;
+      margin-bottom: 50px;
+      margin-top: 40px;
+      width: 280px;
+      padding: 5px;
+      border-radius: 20px;
+    }
+
+    #logoImg {
+      width: 270px;
+      height: 100px;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+      /* align-self:center; */
+    }
+
+    #pokemonImg {
+      width: 120px;
+      height: 120px;
+      /* align-self: center; */
+    }
+
+    .axisLabel {
+      font-size: 20px;
+    }
+
+    .categoryTitle {
+      font-size: 26px;
+      font-weight: bold;
+    }
+
+    #above,
+    #map {
+      display: flex;
+      flex-direction: row;
+    }
+
+    #pokemonLbl,
+    #pokeLogo,
+    #VersionLbl {
+      margin: 5px;
+      font-weight: bold;
+      font-size: 22px;
+    }
+
+    #statsDiv {
+      position: absolute;
+      bottom: 5px;
+      left: 10px;
+    }
+
+    .innerStatsDiv {
+      margin-top: 5px;
+      text-align: right;
+    }
+
+    #typeLbl {
+      display: block;
+      font-size: 16px;
+    }
+
+    .statBar {
+      position: absolute;
+      margin-top: 5px;
+      left: 125%;
+    }
+
+    .statsLbl {
+      font-size: 14px;
+    }
+
+    #graphic,
+    #mapPopout {
+      display: inline-block
+    }
+
+    #map {
+      position: relative;
+      right: 25px;
+    }
+
+    /* #map {
+      display:flex;
+      flex-direction: column;
+    } */
+
+    #mapPopout {
+      position: relative;
+      /* align-self:flex-start; */
+      left: 10px;
+      text-align: center;
+      border: 7px solid #fac42f;
+      margin-bottom: 50px;
+      margin-top: 40px;
+      width: 420px;
+      height: 510px;
+      padding: 5px;
+      border-radius: 20px;
+      overflow-y: scroll;
+    }
+
+    .locationName {
+      text-align: center;
+      font-weight: bold;
+      font-size: 22px;
+    }
+
+    .floorName {
+      text-align: center;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .VersionButton {
+      display: inline-block;
+      /* width: 120px;
+      height: 120px; */
+      padding: 5px;
+      margin-left: 50px;
+      position: relative;
+      cursor: pointer;
+    }
+
+    #VersionLbl {
+      margin-left: 175px;
+    }
+
+    #VersionSelect {
+      margin-left: 300px;
+      display: inline-block;
+      height: 200px;
+    }
+
+    #locationDiv {
+      position: relative;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .pokeTable {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    table,
+    th,
+    td {
+      border: 1px solid black;
+    }
+
+    tr {
+      font-weight: bold;
+    }
+
+    td {
+      font-weight: normal;
+    }
+
+    .legend_title {
+      font-family: 'Courier New';
+      font-weight: bold;
+    }
+
+    .legend {
+      font-family: 'Courier New';
+    }
+
+    body {
+      min-width: 1450px;
+      max-width: 1450px;
+    }
+
+    #main {
+      background-color: #f2f2f2;
+      padding-top: 25px;
+      padding-bottom: 15px;
+      margin-bottom: 30px;
+    }
+
+    #bottom {
+      padding-top: 25px;
+      background-color: #f2f2f2;
+    }
+
+    p {
+      margin-bottom: 0px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="header">Pokemon Visualization
+    <div class='subtitle'>CS 3300 Project 2</div>
+  </div>
+
+  <div class="overview">
+    <h3>Overview</h3>
+    <p>Description/explanation</p>
+  </div>
+
+  <div id="main">
+    <div id="above">
+      <div id="chartDiv">
+        <svg id="typeChart" width="1000" height="600"></svg>
+      </div>
+      <div id="aside">
+        <img src="images/logo.png" id="logoImg" />
+        <img src="images/pokeball.png" id="pokemonImg" />
+        <label id="pokemonLbl">Select a pokemon point to learn more!</label>
+        <div id="statsDiv"></div>
+      </div>
+    </div>
+
+    <div id="buttons"></div>
+  </div>
+
+  <div class="overview">
+    <h3>Overview</h3>
+    <p>Description/explanation</p>
+  </div>
+
+  <div id="bottom">
+    <div id="map">
+      <div id="graphic">
+        <svg class='map' height=600 width=1000></svg>
+      </div>
+      <div id="mapPopout">
+        <img src="images/logo.png" id="logoImg" />
+        <img src="images/pokeball.png" id="pokemonImg" />
+        <label id="pokeLogo">Click on a location to learn more!</label>
+        <div id="locationDiv">
+
+        </div>
+      </div>
+    </div>
+
+
+
+    <div id="VersionSelect">
+      <label id="VersionLbl">Choose Version to Display</label>
+      <img src="images/Red.png" class="VersionButton" width="120"
+        height="120" />
+      <img src="images/Blue.png" class="VersionButton" width="120"
+        height="120" />
+      <img src="images/Yellow.png" class="VersionButton" width="120"
+        height="120" />
+    </div>
+  </div>
+
+
+  <!-- This script tag is for the map figured I keep them seperate -->
+  <script>
+    let svg = d3.select('.map');
+    svg.append('image')
+      .attr("class", "background_image")
+      .attr("xlink:href", "background.png")
+      .attr("x", 50)
+      .attr("y", 30)
+      .style('position', 'absolute');
+    let currentGame = "Red";
+    let currentRoute = "";
+    moveTimeouts = [];
+    let trainerLoc = "PalletTown";
+    let nextPos = "PalletTown";
+    let height = svg.attr('height');
+    let width = svg.attr('width');
+    let margin = { top: 30, right: 30, bottom: 30, left: 30 };
+    let chartWidth = width - margin.left - margin.right;
+    let chartHeight = height - margin.top - margin.bottom;
+    let chartArea2 = svg.append('g')
+      .attr('transform', `translate(${margin.left},${margin.top})`);
+    svg.append('text')
+      .attr("class", "locationName")
+      .attr("x", chartWidth / 2)
+      .attr("y", 20)
+      .attr("text-anchor", "center")
+      .text("Kanto Region (" + currentGame + ")")
+    d3.select("#label").raise()
+
+    // Legend
+    svg.append('rect')
+      .attr('x', '780')
+      .attr('y', '470')
+      .attr('height', '110')
+      .attr('width', '130')
+      .attr("text-anchor", "center")
+      .style('fill', 'red');
+
+    svg.append('rect')
+      .attr('x', '790')
+      .attr('y', '480')
+      .attr('height', '90')
+      .attr('width', '110')
+      .attr("text-anchor", "center")
+      .style('fill', 'white');
+
+    svg.append('text')
+      .attr('class', 'legend')
+      .attr('x', '815')
+      .attr('y', '500')
+      .attr("text-anchor", "center")
+      .text("Legend");
+
+    svg.append('rect')
+      .attr('x', '810')
+      .attr('y', '510')
+      .attr('height', '10')
+      .attr('width', '10')
+      .attr("text-anchor", "center")
+      .style('fill', 'tan');
+
+    svg.append('text')
+      .attr('class', 'legend')
+      .attr('x', '830')
+      .attr('y', '520')
+      .attr("text-anchor", "center")
+      .text("Routes");
+
+    svg.append('rect')
+      .attr('x', '810')
+      .attr('y', '530')
+      .attr('height', '10')
+      .attr('width', '10')
+      .attr("text-anchor", "center")
+      .style('fill', 'red');
+
+    svg.append('text')
+      .attr('class', 'legend')
+      .attr('x', '830')
+      .attr('y', '540')
+      .attr("text-anchor", "center")
+      .text("Cities");
+
+    svg.append('circle')
+      .attr('cx', '815')
+      .attr('cy', '555')
+      .attr('r', '5')
+      .attr("text-anchor", "center")
+      .style('fill', 'blue');
+
+    svg.append('text')
+      .attr('class', 'legend')
+      .attr('x', '830')
+      .attr('y', '560')
+      .attr("text-anchor", "center")
+      .text("Places");
+
+    function bracketSpawner(mapLoc) {
+      if (mapLoc.attr("label") == "Route 3") {
+        mapLoc = d3.select("#r3primary")
+      }
+      let modifiers = [13,6,15]
+      let height = 0
+      let width = 0
+      let x = 0
+      let y = 0
+      let b0 = 2
+      let b1 = 9
+      
+      if (mapLoc.attr("class").indexOf("nLoc")>=0) {
+        modifiers = [13,5,15]
+        
+        height = 0
+        width = 0
+        x = parseInt(mapLoc.attr("cx"))
+        y = parseInt(mapLoc.attr("cy"))
+        b1 = 10
+
+      }
+      else if (mapLoc.attr("class").indexOf("hLoc")>=0) {
+        modifiers = [5,3,5]
+        height = 0
+        width = 0
+        x = parseInt(mapLoc.attr("cx"))
+        y = parseInt(mapLoc.attr("cy"))
+        b0 = 1
+        b1 = 3
+      }
+      else {
+        
+        height = parseInt(mapLoc.attr("height"))
+        width = parseInt(mapLoc.attr("width"))
+        x = parseInt(mapLoc.attr("x"))
+        y = parseInt(mapLoc.attr("y"))
+      }
+      
+      chartArea2.append("rect")
+            .style("fill", "black")
+            .attr("stroke", "black")
+            .attr("stroke-width", 2)
+            .attr("x", x + (.5*width) - modifiers[2])
+            .attr("y", y + (.5*height) - modifiers[2])
+            .attr("width", b0)
+            .attr("height", b1)
+            .attr("class", "pointerBox")
+
+          chartArea2.append("rect")
+            .style("fill", "black")
+            .attr("stroke", "black")
+            .attr("stroke-width", 2)
+            .attr("x", x + (.5*width) - modifiers[2])
+            .attr("y", y + (.5*height) - modifiers[2])
+            .attr("width", b1)
+            .attr("height", b0)
+            .attr("class", "pointerBox")
+
+          chartArea2.append("rect")
+            .style("fill", "black")
+            .attr("stroke", "black")
+            .attr("stroke-width", 2)
+            .attr("x", x + (.5*width) + modifiers[0])
+            .attr("y", y + (.5*height) - modifiers[2])
+            .attr("width", b0)
+            .attr("height", b1)
+            .attr("class", "pointerBox")
+
+          chartArea2.append("rect")
+            .style("fill", "black")
+            .attr("stroke", "black")
+            .attr("stroke-width", 2)
+            .attr("x", x + (.5*width) + modifiers[1])
+            .attr("y", y + (.5*height) - modifiers[2])
+            .attr("width", b1)
+            .attr("height", b0)
+            .attr("class", "pointerBox")
+
+          chartArea2.append("rect")
+            .style("fill", "black")
+            .attr("stroke", "black")
+            .attr("stroke-width", 2)
+            .attr("x", x + (.5*width) - modifiers[2])
+            .attr("y", y + (.5*height) + modifiers[1])
+            .attr("width", b0)
+            .attr("height", b1)
+            .attr("class", "pointerBox")
+
+          chartArea2.append("rect")
+            .style("fill", "black")
+            .attr("stroke", "black")
+            .attr("stroke-width", 2)
+            .attr("x", x + (.5*width) - modifiers[2])
+            .attr("y", y + (.5*height) + modifiers[0])
+            .attr("width", b1)
+            .attr("height", b0)
+            .attr("class", "pointerBox")
+
+          chartArea2.append("rect")
+            .style("fill", "black")
+            .attr("stroke", "black")
+            .attr("stroke-width", 2)
+            .attr("x", x + (.5*width) + modifiers[0])
+            .attr("y", y + (.5*height) + modifiers[1])
+            .attr("width", b0)
+            .attr("height", b1)
+            .attr("class", "pointerBox")
+
+          chartArea2.append("rect")
+            .style("fill", "black")
+            .attr("stroke", "black")
+            .attr("stroke-width", 2)
+            .attr("x", x + (.5*width) + modifiers[1])
+            .attr("y", y + (.5*height) + modifiers[0])
+            .attr("width", b1)
+            .attr("height", b0)
+            .attr("class", "pointerBox")
+      
+    }  
+
+    let buttonRows = d3.select('#VersionSelect')
+
+    const routeData = async function () {
+      const red = await d3.csv("PokemonRouteDataSetFinalRed.csv", d3.AutoType)
+      const blue = await d3.csv("PokemonRouteDataSetFinalBlue.csv", d3.AutoType)
+      const yellow = await d3.csv("PokemonRouteDataSetFinalYellow.csv", d3.AutoType)
+      const kantoAdj = await d3.csv("KantoAdjacencyMatrix.csv", d3.AutoType)
+      const kantoMapRect = await d3.csv("PokemonKantoRegionRectData.csv", d3.AutoType)
+      const kantoMapCircle = await d3.csv("PokemonKantoRegionCircleData.csv", d3.AutoType)
+      const gameList = [red, blue, yellow]
+      let distToWalk = 0;
+      let cPX = 147; //Current X position of trainer
+      let cPY = 397; //Current Y Position of trainer
+
+
+      for (let i = 0; i < kantoMapRect.length; i++) {
+        chartArea2.append('rect')
+          .attr('x', kantoMapRect[i].x_start)
+          .attr('y', kantoMapRect[i].y_start)
+          .attr('width', kantoMapRect[i].x_end - kantoMapRect[i].x_start)
+          .attr('height', kantoMapRect[i].y_end - kantoMapRect[i].y_start)
+          .attr('label', kantoMapRect[i].label_name)
+          .attr('id', kantoMapRect[i].id)
+          .attr('class', kantoMapRect[i].class)
+          .style('fill', kantoMapRect[i].path_city)
+          .style('opacity', kantoMapRect[i].opacity);
+      }
+
+      for (let i = 0; i < kantoMapCircle.length; i++) {
+        chartArea2.append('circle')
+          .attr('cx', kantoMapCircle[i].cx)
+          .attr('cy', kantoMapCircle[i].cy)
+          .attr('r', kantoMapCircle[i].r)
+          .attr('label', kantoMapCircle[i].label_name)
+          .attr('id', kantoMapCircle[i].id)
+          .attr('class', kantoMapCircle[i].class)
+          .style('fill', 'blue');
+      }
+
+      chartArea2.append('image') //Animated trainer sprite (from bulbapedia)
+        .attr("xlink:href", "images/RedRGBwalkdown.png")
+        .attr("height", 16)
+        .attr("width", 16)
+        .attr("x", 147)
+        .attr("y", 397)
+        .attr("id", "Trainer")
+
+      //Dijkstra's Shortest Path to make sure the trainer stays on the paths
+      function dijkstra(s, t, adj) {
+        let final_path = []
+        let unvisited = Array(adj.length)
+        let routes = Array(adj.length)
+        let distanceMap = new Map();
+
+        adj.forEach((d, i) => {
+
+          if (d['Route'] == s) {
+
+            distanceMap.set(d['Route'], 0)
+          }
+          else {
+            distanceMap.set(d['Route'], Infinity)
+          }
+
+          unvisited[i] = d['Route']
+          routes[i] = d['Route']
+        })
+
+
+        let backTracker = Array(adj.length)
+
+
+
+        while (unvisited.length > 0) {
+          // console.log("here2")
+          let newDistances = []
+          for (r in routes) {
+
+            if (unvisited.indexOf(routes[r]) >= 0) {
+
+              newDistances.push(distanceMap.get(routes[r]))
+            }
+          }
+          let uDist = Math.min(...newDistances)
+          let u = ""
+          for (r in routes) {
+            // console.log(routes[r])
+            if (unvisited.indexOf(routes[r]) >= 0) {
+              if (distanceMap.get(routes[r]) == uDist) {
+                u = routes[r]
+              }
+            }
+          }
+          let uName = u
+          u = routes.indexOf(uName)
+
+          // let uDist = newDistances[u]
+          unvisited.splice(unvisited.indexOf(uName), 1)
+          let currentX = 0
+          let currentY = 0
+          let currentHeight = 0
+          let currentWidth = 0
+
+          if (d3.select("#" + uName).attr("class").indexOf("nLoc") >= 0 || d3.select("#" + uName).attr("class").indexOf("hLoc") >= 0) { //Check if Circle
+            currentX = d3.select("#" + uName).attr("cx")
+            currentY = d3.select("#" + uName).attr("cy")
+            currentHeight = d3.select("#" + uName).attr("r")
+            currentWidth = currentHeight
+          }
+          else { //Else it is a rectangle or point
+            currentX = d3.select("#" + uName).attr("x")
+            currentY = d3.select("#" + uName).attr("y")
+            currentHeight = d3.select("#" + uName).attr("height")
+            currentWidth = d3.select("#" + uName).attr("width")
+            currentX = currentX - currentWidth + (3 * currentWidth / 2)
+            currentY = currentY - currentHeight + (3 * currentHeight / 2)
+            // if (uName == "LavenderTown" ||"CeruleanCity") { //shift Lavender Town left a pixel to get rid of 2 identical paths that pop up
+            //     currentX -= 10; 
+            //     currentY -=10;
+            //   }
+          }
+          let toBeSeen = []
+          for (r in routes) {
+            if (adj[u][routes[r]] == 1 && unvisited.indexOf(routes[r]) >= 0) {
+              toBeSeen.push(routes[r])
+            }
+          }
+
+          for (j in toBeSeen) {
+            let jx = 0
+            let jy = 0
+            let jName = d3.select("#" + toBeSeen[j])
+            if (jName.attr("class").indexOf("nLoc") >= 0 || jName.attr("class").indexOf("hLoc") >= 0) { //Check if Circle
+              // console.log(toBeSeen[j])
+              jx = jName.attr("cx") - 1
+              jy = jName.attr("cy") - 1
+            }
+            else if (jName.attr("class").indexOf("route") >= 0 || jName.attr("class").indexOf("city") >= 0) { //Else check if city or route
+              jx = parseInt(jName.attr("x")) + parseInt(jName.attr("width")) / 2
+              jy = parseInt(jName.attr("y")) + parseInt(jName.attr("height")) / 2
+              // if (jName == "LavenderTown" || "CeruleanCity") { //shift Lavender Town left a pixel to get rid of 2 identical paths that pop up
+              //   jx -= 10; 
+              //   jy -=10
+              // }
+
+            }
+            else { //else it is a corner marker
+              // console.log(toBeSeen[j])
+              jx = jName.attr("x")
+              jy = jName.attr("y")
+
+            }
+
+            cDist = uDist + Math.sqrt((((currentX - jx) ** 2) + ((currentY - jy) ** 2)))
+            if (cDist < distanceMap.get(toBeSeen[j])) {
+              distanceMap.set(toBeSeen[j], cDist);
+              backTracker[routes.indexOf(toBeSeen[j])] = uName;
+            }
+          }
+        }
+
+        let current = t
+        let count = 0
+        while (current != s) {
+          final_path.unshift(current);
+          current = backTracker[routes.indexOf(current)]
+        }
+        // final_path.unshift(s)
+        distToWalk = 0
+        for (p in final_path) {
+          distToWalk += distanceMap.get(final_path[p])
+        }
+        return final_path
+      }
+
+
+      function moveTrainer(rList, count) {
+        // let fraction = distToWalk/rList.length
+        nextDest = rList[count];
+        ndx = 147;
+        ndy = 397;
+        ndh = 0;
+        ndw = 0;
+        if (d3.select("#" + nextDest).attr("class").indexOf("nLoc") >= 0 || d3.select("#" + nextDest).attr("class").indexOf("hLoc") >= 0) { //Check if Circle
+
+          ndx = d3.select("#" + nextDest).attr("cx")
+          ndy = d3.select("#" + nextDest).attr("cy")
+          ndh = d3.select("#" + nextDest).attr("r")
+
+          ndx = ndx - ndh + (3 * ndh / 2) - 8
+          ndy = ndy - ndh + (3 * ndh / 2) - 8
+        }
+        else { //Else it is a rectangle or point
+
+          ndx = d3.select("#" + nextDest).attr("x")
+          ndy = d3.select("#" + nextDest).attr("y")
+          ndh = d3.select("#" + nextDest).attr("height")
+          ndw = d3.select("#" + nextDest).attr("width")
+
+          ndx = ndx - ndw + (3 * ndw / 2) - 8
+          ndy = ndy - ndh + (3 * ndh / 2) - 8
+        }
+        let dist = Math.max(Math.abs(ndx-cPX),Math.abs(ndy-cPY))
+        // console.log(dist)
+        d3.select("#Trainer")
+          .transition().duration(dist*10)
+          .ease(d3.easeLinear)
+          .attr("x", ndx)
+          .attr("y", ndy)
+
+        if (count < rList.length - 1) {
+          moveTimeouts.push(setTimeout(() => {
+            cPX = ndx;
+            cPY = ndy;
+            nextPos = rList[count+1];
+            trainerLoc = nextDest
+            // console.log("here")
+            moveTrainer(rList, count + 1)
+          }, dist*10));
+        }
+        else {
+          cPX = ndx;
+          cPY = ndy;
+        }
+      }
+
+      function onClick(mapLoc) {
+        let tr = d3.select("#Trainer")
+        cPX = tr.attr("x")
+        cPY= tr.attr("y")
+        loc = d3.select("#"+trainerLoc)
+        locX = loc.attr("x")
+        locY = loc.attr("y")
+        // console.log(nextPos)
+        // console.log(trainerLoc)
+        for (z in moveTimeouts) {
+            clearTimeout(moveTimeouts[z]);
+          }
+          let id = mapLoc.attr("id")
+          let rList = dijkstra(nextPos,id,kantoAdj)
+
+          if (rList[0]==trainerLoc) {
+            
+            // console.log("alt",rList)
+            // nextPos = rList[0]
+            
+            moveTrainer(rList,0)
+          }
+          else {
+            
+            rList = dijkstra(trainerLoc, id, kantoAdj)
+            if (nextPos == trainerLoc) {
+              rList.unshift(trainerLoc)
+            }
+            // console.log("main",rList)
+            // nextPos=rList[0]
+            
+            if (rList.length > 0){
+              moveTrainer(rList, 0)
+            }
+          }
+
+
+        let modifier = 8
+        let height = 0
+        let width = 0
+        let x = 0
+        let y = 0
+        if (mapLoc.attr("class").indexOf("nLoc") >= 0) {
+          modifier = 12
+
+          height = 0
+          width = 0
+          x = parseInt(mapLoc.attr("cx"))
+          y = parseInt(mapLoc.attr("cy"))
+
+        }
+        else if (mapLoc.attr("class").indexOf("hLoc") >= 0) {
+          modifier = 10
+          height = 0
+          width = 0
+          x = parseInt(mapLoc.attr("cx"))
+          y = parseInt(mapLoc.attr("cy"))
+        }
+        else {
+
+          height = parseInt(mapLoc.attr("height"))
+          width = parseInt(mapLoc.attr("width"))
+          if (width == height) {
+            modifier = 0
+            width = 0
+            height = 0
+          }
+          x = parseInt(mapLoc.attr("x"))
+          y = parseInt(mapLoc.attr("y"))
+        }
+
+          let newX = x + (.5*width) - modifier
+          let newY = y + (.5*height) - modifier
+          // let newX = this.getAttribute("cx") - this.getAttribute("r") + (3 * this.getAttribute("r") / 2) - 12
+          // let newY = this.getAttribute("cy") - this.getAttribute("r") + (3 * this.getAttribute("r") / 2) - 12
+          moveTimeouts.push(setTimeout(() => {
+            // console.log(nextPos)
+            d3.select("#Trainer")
+              .transition().duration(100)
+              .attr("x", newX)
+              .attr("y", newY)
+            trainerLoc = id
+            cPX = newX;
+            cPY = newY;
+            
+          }, distToWalk*10));
+          routePoke = []
+          let choose = "Red"
+          if (currentGame == "Red") {
+            choose = gameList[0]
+          }
+          else if (currentGame == "Blue") {
+            choose = gameList[1]
+          }
+          else {
+            choose = gameList[2]
+          }
+          currentRoute = mapLoc.attr("label");
+          choose.forEach((d, i) => {
+            const modRoute = d['Route'].split("#")[0]
+
+          if (modRoute == mapLoc.attr("label")) {
+
+            routePoke.push(d)
+          }
+        })
+        d3.selectAll('.routeCardData')
+          .remove()
+        d3.selectAll('.floorName')
+          .remove()
+        mapPopout.select(".pokeTable")
+          .remove()
+        mapPopout.select("#pokemonImg")
+          .remove()
+        mapPopout.select("#pokeLogo")
+          .text(mapLoc.attr("label"))
+        mapPopout.select("#dataTitles")
+          .text('ID, Pokemon')
+        columnHeaders = ['', 'ID', 'Name', 'Rarity', 'Encounter']
+
+        let table = mapPopout.select("#locationDiv")
+          .append("table")
+          .attr("class", "pokeTable")
+        let theader = table.append('thead')
+        let tbody = table.append('tbody')
+        theader.append('tr')
+          .selectAll('th')
+          .data(columnHeaders).enter()
+          .append('th')
+          .text(d => d)
+
+        let currentFloor = ""
+        for (let i = 0; i < routePoke.length; i++) {
+          let floorCheck = routePoke[i]['Route'].split('#')
+          if (floorCheck.length > 1) {
+            if (floorCheck[1] != currentFloor) {
+
+              // mapPopout.append('label').attr('class','floorName').text(floorCheck[1])
+              currentFloor = floorCheck[1]
+              tbody.append('tr')
+                .text(currentFloor)
+            }
+          }
+
+          let row = tbody.append('tr')
+          row.append('td')
+            .append('img')
+            .attr("src", "images/" + routePoke[i]['Pokemon Name'].replace('\'', '').replace('(Female)', '\u2640').replace('(Male)', '\u2642').replace('. ', '-') + ".png")
+            .attr("width", 80)
+            .attr("height", 80)
+          row.append('td')
+            .text(routePoke[i]['Pokemon ID'])
+          row.append('td')
+            .text(routePoke[i]['Pokemon Name'].replace('(Female)', '\u2640').replace('(Male)', '\u2642'))
+          if (routePoke[i]['Encounter Chance'] != 'NA') {
+            row.append('td')
+              .text(routePoke[i]['Encounter Chance'])
+          }
+          else {
+            row.append('td')
+              .text('')
+          }
+          row.append('td')
+            .text(routePoke[i]['Catch Method'])
+          // mapPopout.append('label').attr('class','routeCardData').text(routeName.join(' '))
+        }
+      }
+
+
+      routePoke = []
+      mapPopout = d3.select('#mapPopout')
+      chartArea2.selectAll("rect")
+        .on("mouseover", function () {
+          let currRec = d3.select(this)
+          bracketSpawner(currRec)
+
+          d3.selectAll(".locationName")
+            .text(this.getAttribute("label"))
+
+          // console.log(d3.select(this).label)
+          // console.log(this.attr("label"))
+          // d3.select("#label").text(this.getAttribute("label"));
+        })
+        .on("mouseout", function () {
+          d3.select(this)
+          chartArea2.selectAll(".pointerBox")
+            .remove();
+
+          d3.selectAll(".locationName")
+            .text("Kanto Region (" + currentGame + ")")
+
+          // d3.select("#label").text("")
+        })
+        .on("click", function () {
+          // Generate the list for the side card
+          onClick(d3.select(this))
+
+        });
+
+
+
+      chartArea2.selectAll(".nLoc")
+        .on("mouseover", function () {
+          let currCir = d3.select(this)
+          bracketSpawner(currCir)
+
+          d3.selectAll(".locationName")
+            .text(this.getAttribute("label"))
+          // console.log(d3.select(this).label)
+          // console.log(this.attr("label"))
+          // d3.select("#label").text(this.getAttribute("label"));
+
+        })
+        .on("mouseout", function () {
+          d3.select(this)
+            .transition().duration(200)
+          chartArea2.selectAll(".pointerBox")
+
+            .remove();
+
+          d3.selectAll(".locationName")
+            .text("Kanto Region (" + currentGame + ")")
+          routePoke = []
+        })
+        .on("click", function () {
+          // Generate the list for the side card
+          onClick(d3.select(this))
+
+        });
+
+
+      chartArea2.selectAll(".hLoc")
+
+        .on("mouseover", function () {
+          let currCir = d3.select(this)
+          bracketSpawner(currCir)
+          d3.selectAll(".locationName")
+            .text(this.getAttribute("label"))
+
+
+        })
+        .on("mouseout", function () {
+          d3.select(this)
+            .transition().duration(200)
+          chartArea2.selectAll(".pointerBox")
+            .remove();
+          d3.selectAll(".locationName")
+            .text("Kanto Region (" + currentGame + ")")
+          routePoke = []
+
+        })
+        .on("click", function () {
+          // Generate the list for the side card
+          onClick(d3.select(this))
+
+        });
+
+
+      buttonRows.selectAll(".VersionButton")
+        .on("mouseover", function () {
+          // console.log(this)
+          d3.select(this)
+            .transition().duration(200)
+            .attr("width", 150)
+            .attr("height", 150)
+        })
+        .on("mouseout", function () {
+          // console.log(this)
+          d3.select(this)
+            .transition().duration(200)
+            .attr("width", 120)
+            .attr("height", 120)
+        })
+        // .transition().duration(200)
+        // .attr("stroke","black")
+        // .select("#pointerBox").remove();
+        // d3.select("#label").text("")
+        .on("click", function () {
+          let slen = this.getAttribute("src").length
+          let cG = this.getAttribute("src").substring(7, slen - 4)
+          currentGame = cG
+          d3.selectAll(".locationName")
+            .text("Kanto Region (" + currentGame + ")")
+
+          // currentRoute = d3.select("#pokeLogo").text;
+          // console.log(d3.select("#pokeLogo > text"))
+          if (currentRoute != "") {
+            routePoke = []
+            let choose = "Red"
+            if (currentGame == "Red") {
+              choose = gameList[0]
+            }
+            else if (currentGame == "Blue") {
+              choose = gameList[1]
+            }
+            else {
+              choose = gameList[2]
+            }
+            choose.forEach((d, i) => {
+              const modRoute = d['Route'].split("#")[0]
+
+              if (modRoute == currentRoute) {
+
+                routePoke.push(d)
+              }
+            })
+            d3.selectAll('.routeCardData')
+              .remove()
+            d3.selectAll('.floorName')
+              .remove()
+            d3.selectAll('.pokeTable')
+              .remove()
+            d3.select(this)
+            mapPopout.select("#pokemonImg")
+              .remove()
+            mapPopout.select("#pokeLogo")
+              .text(currentRoute)
+            mapPopout.select("#dataTitles")
+              .text('ID, Pokemon')
+            columnHeaders = ['', 'ID', 'Name', 'Rarity', 'Encounter']
+
+            let table = mapPopout.select("#locationDiv")
+              .append("table")
+              .attr("class", "pokeTable")
+            let theader = table.append('thead')
+            let tbody = table.append('tbody')
+            theader.append('tr')
+              .selectAll('th')
+              .data(columnHeaders).enter()
+              .append('th')
+              .text(d => d)
+
+            let currentFloor = ""
+            for (let i = 0; i < routePoke.length; i++) {
+              let floorCheck = routePoke[i]['Route'].split('#')
+              if (floorCheck.length > 1) {
+                if (floorCheck[1] != currentFloor) {
+
+                  // mapPopout.append('label').attr('class','floorName').text(floorCheck[1])
+                  currentFloor = floorCheck[1]
+                  tbody.append('tr')
+                    .text(currentFloor)
+
+                }
+              }
+
+              let row = tbody.append('tr')
+              row.append('td')
+                .append('img')
+                .attr("src", "images/" + routePoke[i]['Pokemon Name'].replace('\'', '').replace('(Female)', '-f').replace('(Male)', '-m').replace('. ', '-') + ".png")
+                .attr("width", 80)
+                .attr("height", 80)
+              row.append('td')
+                .text(routePoke[i]['Pokemon ID'])
+              row.append('td')
+                .text(routePoke[i]['Pokemon Name'].replace('(Female)', '\u2640').replace('(Male)', '\u2642'))
+              if (routePoke[i]['Encounter Chance'] != 'NA') {
+                row.append('td')
+                  .text(routePoke[i]['Encounter Chance'])
+              }
+              else {
+                row.append('td')
+                  .text('')
+              }
+              row.append('td')
+                .text(routePoke[i]['Catch Method'])
+              // mapPopout.append('label').attr('class','routeCardData').text(routeName.join(' '))
+            }
+          }
+        })
+    }
+    routeData();
+  </script>
+
+  <script>
+    // category visualization set up
+    const requestData = async function () {
+      svg = d3.select('#typeChart')
+      height = svg.attr('height')
+      width = svg.attr('width')
+      margin = { top: 40, right: 10, bottom: 60, left: 80 }
+      chartWidth = width - margin.left - margin.right
+      chartHeight = height - margin.top - margin.bottom
+      chartArea = svg.append('g')
+        .attr('transform', `translate(${margin.left},${margin.top})`)
+        .attr('id', 'categoryPlot')
+      let annotations = svg.append("g").attr("id", "annotations")
+
+      annotations.append('text')
+        .attr('transform', `translate(${margin.left / 2.5},${height / 2 + 40}) rotate(-90)`)
+        .attr('class', 'axisLabel')
+        .text("Attack")
+
+      annotations.append('text')
+        .attr('class', 'axisLabel')
+        .attr('transform', `translate(${width / 2 - 50},${height - (margin.bottom / 10)})`)
+        .text("Health Points (HP)")
+
+      let categoryTitle = annotations.append('text')
+        .attr('class', 'categoryTitle')
+        .attr('transform', `translate(${width / 2 - 160},${margin.top - 20})`)
+        .text('ALL Pokemon Attack vs. HP')
+
+      const pokemon = await d3.csv("pokemon.csv")
+
+      pokemon.forEach(d => {
+        d.hp = parseInt(d.hp)
+        d.attack = parseInt(d.attack)
+        d.defense = parseInt(d.defense)
+        d.sp_attack = parseInt(d.sp_attack)
+        d.sp_defense = parseInt(d.sp_defense)
+        d.speed = parseInt(d.speed)
+        d.capture_rate = parseInt(d.capture_rate)
+        d.is_legendary = (d.is_legendary == "1") ? "Yes" : "No"
+      })
+
+      const attackExtent = d3.extent(pokemon, d => d.attack)
+      const attackScale = d3.scaleLinear().domain(attackExtent).range([chartHeight, 0])
+
+      let leftAxis = d3.axisLeft()
+      let leftGridlines = d3.axisLeft()
+        .tickSize(-chartWidth - 10)
+        .tickFormat("")
+      let leftAxisG = annotations.append("g")
+        .attr("class", "y axis")
+        .attr("transform", `translate(${margin.left - 10},${margin.top})`)
+      // .call(leftAxis)
+      let leftGridlinesG = annotations.append("g")
+        .attr("class", "y gridlines")
+        .attr("transform", `translate(${margin.left - 10},${margin.top})`)
+      // .call(leftGridlines)
+
+      const hpExtent = d3.extent(pokemon, d => d.hp)
+      const hpScale = d3.scaleLinear().domain(hpExtent).range([0, chartWidth])
+
+      let bottomAxis =
+        d3.axisBottom()
+      let bottomGridlines =
+        d3.axisBottom()
+          .tickSize(-chartHeight - 10)
+          .tickFormat("")
+      let bottomAxisG = annotations.append("g")
+        .attr("class", "x axis")
+        .attr("transform", `translate(${margin.left},${chartHeight + margin.top + 10})`)
+      // .call(bottomAxis)
+      let bottomGridlinesG = annotations.append("g")
+        .attr("class", "x gridlines")
+        .attr("transform", `translate(${margin.left},${chartHeight + margin.top + 10})`)
+      // .call(bottomGridlines)
+
+      let colors =
+      {
+        "bug": "#88c916",
+        "dark": "#061d30",
+        "dragon": "#300d75",
+        "electric": "#e8881a",
+        "fairy": "#e07ed5",
+        "fighting": "#452015",
+        "fire": "#bf0808",
+        "flying": "#3a65c2",
+        "ghost": "#152f69",
+        "grass": "#198529",
+        "ground": "#b08b64",
+        "ice": "#00eaff",
+        "normal": "#a5b6b8",
+        "poison": "#541a66",
+        "psychic": "#b81c5f",
+        "rock": "#6e5936",
+        "steel": "#54524d",
+        "water": "#1425b8"
+      }
+
+      function jitter() {
+        return Math.floor(((Math.random() * 9) - 4))
+      }
+
+      const showStats = async function (p) {
+        let aside = d3.select("#aside")
+        console.log(p)
+
+        let img = 'images/pokeball.png'
+        let pngImg = `images/${p.name.toLowerCase()}.png`
+        let jpgImg = `images/${p.name.toLowerCase()}.jpg`
+        const response = await fetch(pngImg)
+        if (response.status == 200) {
+          img = pngImg
+        } else {
+          const response2 = await fetch(jpgImg)
+          if (response2.status == 200) {
+            img = jpgImg
+          }
+        }
+
+        // labels
+        aside.select("#pokemonImg").remove()
+        aside.select("#pokemonLbl").remove()
+        aside.select("#typeLbl").remove()
+        aside.append("img")
+          .attr("src", img)
+          .attr("id", "pokemonImg")
+        aside.append("label")
+          .attr("id", "pokemonLbl")
+          .text(p.name)
+        if (p.type2 != "") {
+          aside.append("label")
+            .attr("id", "typeLbl")
+            .text("Types: " + p.type1 + ", " + p.type2)
+        } else {
+          aside.append("label")
+            .attr("id", "typeLbl")
+            .text("Type: " + p.type1)
+        }
+
+
+        let stats = d3.select("#statsDiv")
+        stats.selectAll("*").remove()
+        const statsList = ["Attack", "HP", "Defense", "SPAttack", "Speed", "SPDefense", "CaptureRate", "Pokedex", "Legendary"]
+
+        const attackScale = d3.scaleLinear().domain([5, 185]).range([0, 130])
+        const hpScale = d3.scaleLinear().domain([1, 255]).range([0, 130])
+        const defenseScale = d3.scaleLinear().domain([5, 230]).range([0, 130])
+        const sp_attackScale = d3.scaleLinear().domain([10, 194]).range([0, 130])
+        const speedScale = d3.scaleLinear().domain([5, 180]).range([0, 130])
+        const sp_defenseScale = d3.scaleLinear().domain([20, 230]).range([0, 130])
+        const capture_rateScale = d3.scaleLinear().domain([3, 255]).range([0, 130])
+
+        const scaleMap = {
+          "Attack": attackScale, "HP": hpScale, "Defense": defenseScale,
+          "SPAttack": sp_attackScale, "Speed": speedScale, "SPDefense": sp_defenseScale,
+          "CaptureRate": capture_rateScale
+        }
+
+        const lookUpMap = {
+          "Attack": 'attack', "HP": 'hp', "Defense": 'defense',
+          "SPAttack": 'sp_attack', "Speed": 'speed', "SPDefense": 'sp_defense',
+          "CaptureRate": 'capture_rate', "Pokedex": "pokedex_number", "Legendary": 'is_legendary'
+        }
+
+        statsList.forEach((s, i) => {
+
+          let div = stats.append("div")
+            .attr("class", "innerStatsDiv")
+          div.append("label")
+            .attr("class", "statsLbl")
+            .text(s + ":")
+          let statBar = div.append("svg")
+            .attr("class", "statBar")
+            .attr("width", 170)
+            .attr("height", 10)
+
+          if (i < 7) {
+            statBar.append('rect')
+              .attr('x', 0)
+              .attr('y', 0)
+              .attr('width', 130)
+              .attr('height', 10)
+              .style('fill', 'lightgrey')
+
+            statBar.append('rect')
+              .attr('x', 0)
+              .attr('y', 0)
+              .attr('width', scaleMap[s](p[lookUpMap[s]]))
+              .attr('height', 10)
+              .style('fill', 'red')
+
+            statBar.append('text')
+              .attr("class", "statsLbl")
+              .attr('transform', `translate(140, 10)`)
+              .text(p[lookUpMap[s]])
+
+          } else {
+            statBar.append('text')
+              .attr("class", "statsLbl")
+              .attr('transform', `translate(0 , 10)`)
+              .text(p[lookUpMap[s]])
+          }
+        })
+
+      }
+
+      function reset() {
+        let aside = d3.select("#aside")
+        aside.select("#pokemonImg").remove()
+        aside.select("#pokemonLbl").remove()
+        aside.select("#typeLbl").remove()
+        let stats = d3.select("#statsDiv")
+        stats.selectAll("*").remove()
+        aside.append("img")
+          .attr("src", 'images/pokeball.png')
+          .attr("id", "pokemonImg")
+        aside.append("label")
+          .attr("id", "pokemonLbl")
+          .text("Select a pokemon point to learn more!")
+
+      }
+
+      function click(point) {
+        clicked = true
+        d3.select(point)
+          .transition().duration(100)
+          .attr("stroke", "black")
+          .attr("stroke-width", 4)
+          .attr("opacity", 1)
+          .attr("r", 7)
+        selectedPoint = point
+      }
+
+      function unClick() {
+        clicked = false
+        d3.select(selectedPoint)
+          .transition().duration(200)
+          .attr("stroke-width", 0)
+          .attr("opacity", 0.8)
+          .attr("r", 5)
+        selectedPoint = null
+      }
+
+      var clicked = false
+      var selectedPoint = null
+      // update/filter pokemon based on type
+      function updateGraph(type) {
+        const transitionTime = 800
+        let filtered = pokemon
+        if (type != "All") {
+          filtered = pokemon.filter((d) => { return (d.type1 == type) || (d.type2 == type) })
+        }
+        categoryTitle.text(`${type.toUpperCase()} Pokemon Attack vs. HP`)
+
+        console.log(filtered)
+
+        const hpExtent = d3.extent(filtered, d => d.hp)
+        const hpScale = d3.scaleLinear().domain([hpExtent[0] - 10, hpExtent[1] + 10]).range([0, chartWidth])
+        const attackExtent = d3.extent(filtered, d => d.attack)
+        const attackScale = d3.scaleLinear().domain([attackExtent[0] - 10, attackExtent[1] + 10]).range([chartHeight, 0])
+
+        const defenseExtent = d3.extent(filtered, d => d.defense)
+        const sp_attackExtent = d3.extent(filtered, d => d.sp_attack)
+        const sp_defenseExtent = d3.extent(filtered, d => d.sp_defense)
+        const speedExtent = d3.extent(filtered, d => d.speed)
+        const capture_rateExtent = d3.extent(filtered, d => d.capture_rate)
+
+        // console.log("attack", attackExtent)
+        // console.log("hp", hpExtent)
+        // console.log("defense", defenseExtent)
+        // console.log("sp_attack", sp_attackExtent)
+        // console.log("sp_defense", sp_defenseExtent)
+        // console.log("speed", speedExtent)
+        // console.log("capture_rate", capture_rateExtent)
+
+        leftAxis.scale(attackScale)
+        leftAxisG.transition(transitionTime / 2).call(leftAxis)
+
+        leftGridlines.scale(attackScale)
+        leftGridlinesG.transition(transitionTime / 2).call(leftGridlines)
+
+        bottomAxis.scale(hpScale)
+        bottomAxisG.transition(transitionTime / 2).call(bottomAxis)
+
+        bottomGridlines.scale(hpScale)
+        bottomGridlinesG.transition(transitionTime / 2).call(bottomGridlines)
+
+
+        chartArea.selectAll('circle').data(filtered)
+          .join(enter => enter.append('circle')
+            .on("mouseover", function () {
+              if (this != selectedPoint) {
+                d3.select(this)
+                  .transition().duration(200)
+                  .attr("stroke", "black")
+                  .attr("stroke-width", 2)
+                  .attr("r", 7)
+              }
+              showStats(d3.select(this).datum())
+            })
+            .on("mouseout", function () {
+              if (this != selectedPoint) {
+                d3.select(this)
+                  .transition().duration(200)
+                  .attr("stroke-width", 0)
+                  .attr("r", 5)
+              }
+
+              if (selectedPoint != null) {
+                showStats(d3.select(selectedPoint).datum())
+              } else {
+                reset()
+              }
+            })
+            .on("click", function () {
+              if (clicked == false) {
+                click(this)
+              } else if (clicked == true && selectedPoint == this) {
+                unClick()
+              } else {
+                unClick()
+                click(this)
+              }
+              showStats(d3.select(this).datum())
+            })
+            .attr('class', type)
+            .style('fill', type == "All" ? d => colors[d.type1] : colors[type])
+            .attr('r', 5)
+            .attr('cx', d => hpScale(d.hp) + jitter())
+            .attr('cy', d => attackScale(d.attack) + jitter())
+            .attr("opacity", 0.8)
+            .call(enter => enter.transition().duration(transitionTime).attr('opacity', 0.8)),
+            update => update.call(update => update.transition().duration(transitionTime)
+              .attr('class', type)
+              .attr("stroke-width", 0)
+              .attr("r", 5)
+              .attr("opacity", 0.8)
+              .attr("cx", d => hpScale(d.hp) + jitter())
+              .attr("cy", d => attackScale(d.attack) + jitter()))
+              .style('fill', type == "All" ? d => colors[d.type1] : colors[type]),
+            exit => exit.call(exit => exit.transition().duration(transitionTime).attr('opacity', 0).remove()))
+
+        d3.select('#categoryPlot').raise()
+
+        // d3.select("#typeChart")
+        //   .on("click", function () {
+
+        //     reset()
+        //     clicked = false
+        //     if (selectedPoint != null) {
+        //       d3.select(selectedPoint)
+        //         .transition().duration(200)
+        //         .attr("stroke-width", 0)
+        //         .attr("r", 5)
+        //       selectedPoint = null
+        //     }
+        //   })
+
+
+      }
+
+      //initial graph with all pokemon
+      updateGraph("All")
+
+      // buttons
+      let types = d3.map(pokemon, d => d.type1)
+      types = new Set(types)
+      types = Array.from(types).sort()
+      const buttons = d3.select("#buttons")
+
+      let container = buttons.append("div")
+        .attr("class", "inner")
+        .attr("id", "innerShowAll")
+      container.append("button")
+        .attr("class", "showAll")
+        .text("show all")
+        .style("background-color", "black")
+        .on("click", function () {
+          reset()
+          unClick()
+          updateGraph("All")
+        })
+
+      types.forEach((t, i) => {
+        if (i % 9 == 0 && i != 0) {
+          buttons.append("br")
+        }
+        container = buttons.append("div")
+          .attr("class", "inner")
+        container.append("button")
+          .attr("class", "category")
+          .style("background-color", colors[t])
+          .text(t)
+          .on("click", function () {
+            reset()
+            unClick()
+            updateGraph(t)
+          })
+      })
+    }
+    requestData()
+  </script>
+</body>
+
+</html>
