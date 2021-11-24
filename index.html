@@ -936,7 +936,7 @@
           let row = tbody.append('tr')
           row.append('td')
             .append('img')
-            .attr("src", "images/" + routePoke[i]['Pokemon Name'].replace('\'', '').replace('(Female)', '\u2640').replace('(Male)', '\u2642').replace('. ', '-') + ".png")
+            .attr("src", "images/" + routePoke[i]['Pokemon Name'].replace('\'', '').replace('(Female)', '_female').replace('(Male)', '_male').replace('. ', '_') + ".png")
             .attr("width", 80)
             .attr("height", 80)
           row.append('td')
