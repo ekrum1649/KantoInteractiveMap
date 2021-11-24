@@ -2,8 +2,7 @@
 
 Originally part of one of my visualization project's for Cornell's CS3300 class.
 
-Other Contributors to original source:
-
+Other Contributors to original source:   
 github user- ptucham
 
 Data Sources: 
