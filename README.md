@@ -1,1 +1,1 @@
-# KanttoInteractiveMap
+# KantoInteractiveMap
