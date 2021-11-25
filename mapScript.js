@@ -228,9 +228,35 @@ let buttonRows = d3.select('#VersionSelect')
 
 const routeData = async function () {
     //load in data files
+    const raritySortOrder = ['Common','Uncommon','Rare','NA']
+    const methodSortOrder = ['Starter','Walking','Surfing','Old Rod','Good Rod','Super Rod','Interact','Gift','Trade','Game Corner','Fossil']
     const red = await d3.csv("PokemonRouteDataSetFinalRed.csv", d3.AutoType)
+    red.sort(function(a,b) {
+        return d3.ascending(raritySortOrder.indexOf(a['Encounter Chance']),raritySortOrder.indexOf(b['Encounter Chance']));
+    })
+    red.sort(function(a,b) {
+        return d3.ascending(methodSortOrder.indexOf(a['Catch Method']), methodSortOrder.indexOf(b['Catch Method']));
+        
+    })
+    red.sort(function (a,b) {return d3.ascending(a['Route'], b['Route']);});
     const blue = await d3.csv("PokemonRouteDataSetFinalBlue.csv", d3.AutoType)
+    blue.sort(function(a,b) {
+        return d3.ascending(raritySortOrder.indexOf(a['Encounter Chance']),raritySortOrder.indexOf(b['Encounter Chance']));
+    })
+    blue.sort(function(a,b) {
+        return d3.ascending(methodSortOrder.indexOf(a['Catch Method']), methodSortOrder.indexOf(b['Catch Method']));
+        
+    })
+    blue.sort(function (a,b) {return d3.ascending(a['Route'], b['Route']);});
     const yellow = await d3.csv("PokemonRouteDataSetFinalYellow.csv", d3.AutoType)
+    yellow.sort(function(a,b) {
+        return d3.ascending(raritySortOrder.indexOf(a['Encounter Chance']),raritySortOrder.indexOf(b['Encounter Chance']));
+    })
+    yellow.sort(function(a,b) {
+        return d3.ascending(methodSortOrder.indexOf(a['Catch Method']), methodSortOrder.indexOf(b['Catch Method']));
+        
+    })
+    yellow.sort(function (a,b) {return d3.ascending(a['Route'], b['Route']);});
     const kantoAdj = await d3.csv("KantoAdjacencyMatrix.csv", d3.AutoType)
     const kantoMapRect = await d3.csv("PokemonKantoRegionRectData.csv", d3.AutoType)
     const kantoMapCircle = await d3.csv("PokemonKantoRegionCircleData.csv", d3.AutoType)
