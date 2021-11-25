@@ -1,0 +1,276 @@
+.header {
+    padding-bottom: 20px;
+    font-size: 100px;
+    background-color: #ffcb05;
+    width: var(--main-width-value);
+    text-align: center;
+    color: #3c5aa6;
+  }
+
+  .subtitle {
+    font-size: 38px;
+  }
+
+  .overview {
+    font-size: 25px;
+    background-color: #3c5aa6;
+    width: var(--main-width-value);
+    text-align: center;
+    color: #ffcb05;
+  }
+
+  .category,
+  .showAll {
+    height: 35px;
+    width: 100px;
+    color: white;
+    border: 1px solid white;
+    border-radius: 100px;
+    cursor: pointer;
+    font-variant: small-caps;
+    font-weight: bolder;
+    font-size: 20px;
+  }
+
+  .showAll {
+    width: 160px;
+    height: 60px;
+  }
+
+  .category:hover,
+  .showAll:hover {
+    border: 1px solid black;
+  }
+
+  #innerShowAll {
+    position: absolute;
+    left: 1125px;
+  }
+
+  .inner {
+    display: inline-block;
+    margin-right: 5px;
+    border: 0.5px solid black;
+    border-radius: 100px;
+    margin-bottom: 5px;
+  }
+
+  .outer,
+  #pokemonLbl,
+  #pokeLogo,
+  #VersionLbl,
+  .routeCardData {
+    display: block;
+  }
+
+  #buttons {
+    margin-left: 25px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  .gridlines .domain {
+    display: none;
+  }
+
+  .gridlines line {
+    stroke: #bbb;
+  }
+
+  #typeChart,
+  #aside {
+    display: inline-block;
+  }
+
+  #aside {
+    position: relative;
+    left: 50px;
+    text-align: center;
+    border: 7px solid #fac42f;
+    margin-bottom: 50px;
+    margin-top: 40px;
+    width: 280px;
+    padding: 5px;
+    border-radius: 20px;
+  }
+
+  #logoImg {
+    width: 270px;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    /* align-self:center; */
+  }
+
+  #pokemonImg {
+    width: 120px;
+    height: 120px;
+    /* align-self: center; */
+  }
+
+  .axisLabel {
+    font-size: 20px;
+  }
+
+  .categoryTitle {
+    font-size: 26px;
+    font-weight: bold;
+  }
+
+  #above,
+  #map {
+    display: flex;
+    flex-direction: row;
+  }
+
+  #pokemonLbl,
+  #pokeLogo,
+  #VersionLbl {
+    margin: 5px;
+    font-weight: bold;
+    font-size: 22px;
+  }
+
+  #statsDiv {
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
+  }
+
+  .innerStatsDiv {
+    margin-top: 5px;
+    text-align: right;
+  }
+
+  #typeLbl {
+    display: block;
+    font-size: 16px;
+  }
+
+  .statBar {
+    position: absolute;
+    margin-top: 5px;
+    left: 125%;
+  }
+
+  .statsLbl {
+    font-size: 14px;
+  }
+
+  #graphic,
+  #mapPopout {
+    display: inline-block
+  }
+
+  #map {
+    position: relative;
+    right: 25px;
+  }
+
+  /* #map {
+    display:flex;
+    flex-direction: column;
+  } */
+
+  #mapPopout {
+    position: relative;
+    /* align-self:flex-start; */
+    left: 10px;
+    text-align: center;
+    border: 7px solid #fac42f;
+    margin-bottom: 50px;
+    margin-top: 40px;
+    width: 420px;
+    height: 510px;
+    padding: 5px;
+    border-radius: 20px;
+    overflow-y: scroll;
+  }
+
+  .locationName {
+    text-align: center;
+    font-weight: bold;
+    font-size: 22px;
+  }
+
+  .floorName {
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  .VersionButton {
+    display: inline-block;
+    /* width: 120px;
+    height: 120px; */
+    padding: 5px;
+    margin-left: 50px;
+    position: relative;
+    cursor: pointer;
+  }
+
+  #VersionLbl {
+    margin-left: 175px;
+  }
+
+  #VersionSelect {
+    margin-left: 300px;
+    display: inline-block;
+    height: 200px;
+  }
+
+  #locationDiv {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .pokeTable {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  table,
+  th,
+  td {
+    border: 1px solid black;
+  }
+
+  tr {
+    font-weight: bold;
+  }
+
+  td {
+    font-weight: normal;
+  }
+
+  .legend_title {
+    font-family: 'Courier New';
+    font-weight: bold;
+  }
+
+  .legend {
+    font-family: 'Courier New';
+  }
+
+  body {
+    min-width: 1450px;
+    max-width: 1450px;
+  }
+
+  #main {
+    background-color: #f2f2f2;
+    padding-top: 25px;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+  }
+
+  #bottom {
+    padding-top: 25px;
+    background-color: #f2f2f2;
+  }
+
+  p {
+    margin-bottom: 0px;
+  }
