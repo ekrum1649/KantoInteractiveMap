@@ -600,17 +600,31 @@ const routeData = async function () {
         .text(d => d)
 
     let currentFloor = ""
+    let currentMethod = ""
     for (let i = 0; i < routePoke.length; i++) { //Append either pokemon info or floor marker
         let floorCheck = routePoke[i]['Route'].split('#')
+        let methodCheck = routePoke[i]['Catch Method']
         if (floorCheck.length > 1) {
-        if (floorCheck[1] != currentFloor) { //Add floor marker row
+            if (floorCheck[1] != currentFloor) { //Add floor marker row
 
-            currentFloor = floorCheck[1]
+                currentFloor = floorCheck[1]
+                let trow = tbody.append('tr')
+                trow.append('th')
+                    .text(currentFloor)
+                    .style('text-align','center')
+                    .attr('colspan','5')
+                    .style('border','3px solid black')
+                    .style('font-size','20px')
+                tbody.append('tr')
+                    .text(methodCheck)
+                currentMethod = methodCheck
+            }
+        }
+        if (methodCheck != currentMethod) {
             tbody.append('tr')
-            .text(currentFloor)
+                .text(methodCheck)
+            currentMethod = methodCheck
         }
-        }
-
         let row = tbody.append('tr') //Add pokemon info
         row.append('td')
         .append('img')
@@ -789,30 +803,45 @@ const routeData = async function () {
             .text(d => d)
 
         let currentFloor = ""
-        for (let i = 0; i < routePoke.length; i++) {
+        let currentMethod = ""
+        for (let i = 0; i < routePoke.length; i++) { //Append either pokemon info or floor marker
             let floorCheck = routePoke[i]['Route'].split('#')
+            let methodCheck = routePoke[i]['Catch Method']
             if (floorCheck.length > 1) {
-            if (floorCheck[1] != currentFloor) {
-
-                currentFloor = floorCheck[1]
+                if (floorCheck[1] != currentFloor) { //Add floor marker row
+    
+                    currentFloor = floorCheck[1]
+                    let trow = tbody.append('tr')
+                    trow.append('th')
+                        .text(currentFloor)
+                        .style('text-align','center')
+                        .attr('colspan','5')
+                        .style('border','3px solid black')
+                        .style('font-size','20px')
+                    tbody.append('tr')
+                        .text(methodCheck)
+                    currentMethod = methodCheck
+                }
+            }
+            
+            if (methodCheck != currentMethod) {
                 tbody.append('tr')
-                .text(currentFloor)
-
+                    .text(methodCheck)
+                currentMethod = methodCheck
             }
-            }
-
-            let row = tbody.append('tr')
+            let row = tbody.append('tr') //Add pokemon info
             row.append('td')
             .append('img')
-            .attr("src", `images/${routePoke[i]['Pokemon Name']
-                .replace('\'', '').replace('(Female)', '_female').replace('(Male)', '_male')
-                .replace('. ', '_').toLowerCase()}.png`)
+            .attr("src", `images/${routePoke[i]['Pokemon Name'].replace('\'', '')
+                    .replace('(Female)', '_female').replace('(Male)', '_male')
+                    .replace('. ', '_').toLowerCase()}.png`) //Append pokemon photo
             .attr("width", 80)
             .attr("height", 80)
             row.append('td')
             .text(routePoke[i]['Pokemon ID'])
             row.append('td')
-            .text(routePoke[i]['Pokemon Name'].replace('(Female)', '\u2640').replace('(Male)', '\u2642'))
+            .text(routePoke[i]['Pokemon Name']
+                .replace('(Female)', '\u2640').replace('(Male)', '\u2642')) //Nidoran male and female symbols
             if (routePoke[i]['Encounter Chance'] != 'NA') {
             row.append('td')
                 .text(routePoke[i]['Encounter Chance'])
