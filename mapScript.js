@@ -239,10 +239,9 @@ const routeData = async function () {
     const gameList = [red, blue, yellow]
     for (game in gameList) {
         gameList[game].sort(function (a,b) {return d3.ascending(a['Pokemon ID'],b['Pokemon ID'])});
-        gameList[game].sort(function(a,b) {
-            return d3.ascending(a['Encounter Chance'],b['Encounter Chance']);
-        })
-        gameList[game].sort((a,b) => d3.ascending(methodSortOrder.indexOf(a['Catch Method']), methodSortOrder.indexOf(b['Catch Method']))) || d3.ascending(a['Catch Method'],b['Catch Method']);
+        gameList[game].sort((a,b) => d3.ascending(parseInt(a['Encounter Chance'].split("C")[0].split("%")[0]),parseInt(b['Encounter Chance'].split("C")[0].split("%")[0])));
+        gameList[game].sort((a,b) => d3.ascending(methodSortOrder.indexOf(a['Catch Method']), methodSortOrder.indexOf(b['Catch Method'])) || d3.ascending(a['Catch Method'],b['Catch Method']));
+            
         gameList[game].sort(function (a,b) {return d3.ascending(a['Route'], b['Route']);});
     }
     let distToWalk = 0; //distance to final location from current position
@@ -830,7 +829,7 @@ const routeData = async function () {
             row.append('td')
             .append('img')
             .attr("src", `images/${routePoke[i]['Pokemon Name'].replace('\'', '')
-                    .replace('(Female)', '_female').replace('(Male)', '_male')
+                    .replace('\u2640', '_female').replace('\u2642', '_male')
                     .replace('. ', '_').replace('Ghost Marowak','marowak').toLowerCase()}.png`) //Append pokemon photo
             .attr("width", 80)
             .attr("height", 80)
