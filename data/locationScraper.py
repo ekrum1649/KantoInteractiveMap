@@ -91,7 +91,7 @@ def location_pokemon(location,generation,version):
                     continue
                 pokeName = poke.find("a").get("title")
                 pokeID = poke.find("img").get("src").split("/")[-1][:-7]
-                route = location.split('/')[-1].replace('_',' ').replace("&nbsp;"," ").replace("%C3%A9","e").replace("%27","\'").replace('Silph Co.','Saffron City').replace('Underground Path (Kanto Routes 5-6)','Saffron City').replace('Celadon Condominiums','Celadon City').replace('Cinnabar Lab','Cinnabar Island').replace('Fighting Dojo','Saffron City').replace('Kanto ','').replace('.','').replace('(Kanto)','').replace('Professor Oak\'s Laboratory','Pallet Town').replace('Sea Cottage','Bill\'s House')
+                route = location.split('/')[-1].replace('_',' ').replace("&nbsp;"," ").replace("%C3%A9","e").replace("%27","\'").replace('Silph Co.','Saffron City').replace('Underground Path (Kanto Routes 5-6)','Saffron City').replace('Celadon Condominiums','Celadon City').replace('Cinnabar Lab','Cinnabar Island').replace('Fighting Dojo','Saffron City').replace('Kanto ','').replace('.','').replace('(Kanto)','').replace('Professor Oak\'s Laboratory','Pallet Town').replace('Sea Cottage','Bill\'s House').strip()
                 method = ""
                 levels = ""
                 chance = ""
