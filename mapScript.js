@@ -228,11 +228,11 @@ let buttonRows = d3.select('#VersionSelect')
 
 const routeData = async function () {
     //load in data files
-    const raritySortOrder = ['Common','Uncommon','Rare','NA']
-    const methodSortOrder = ['Starter','Walking','Surfing','Old Rod','Good Rod','Super Rod','Interact','Gift','Trade','Game Corner','Fossil']
-    const red = await d3.csv("PokemonRouteDataSetFinalRed.csv", d3.AutoType)
-    const blue = await d3.csv("PokemonRouteDataSetFinalBlue.csv", d3.AutoType)
-    const yellow = await d3.csv("PokemonRouteDataSetFinalYellow.csv", d3.AutoType)
+    // const raritySortOrder = ['Common','Uncommon','Rare','NA']
+    const methodSortOrder = ['Starter','Walking','Grass','Cave','Surfing','Old Rod','Good Rod','Super Rod','Interact','Gift','Trade','Game Corner','Fossil']
+    const red = await d3.csv("data/PokemonRouteDataSetFinalR.csv", d3.AutoType)
+    const blue = await d3.csv("data/PokemonRouteDataSetFinalB.csv", d3.AutoType)
+    const yellow = await d3.csv("data/PokemonRouteDataSetFinalY.csv", d3.AutoType)
     const kantoAdj = await d3.csv("KantoAdjacencyMatrix.csv", d3.AutoType)
     const kantoMapRect = await d3.csv("PokemonKantoRegionRectData.csv", d3.AutoType)
     const kantoMapCircle = await d3.csv("PokemonKantoRegionCircleData.csv", d3.AutoType)
@@ -240,12 +240,9 @@ const routeData = async function () {
     for (game in gameList) {
         gameList[game].sort(function (a,b) {return d3.ascending(a['Pokemon ID'],b['Pokemon ID'])});
         gameList[game].sort(function(a,b) {
-            return d3.ascending(raritySortOrder.indexOf(a['Encounter Chance']),raritySortOrder.indexOf(b['Encounter Chance']));
+            return d3.ascending(a['Encounter Chance'],b['Encounter Chance']);
         })
-        gameList[game].sort(function(a,b) {
-            return d3.ascending(methodSortOrder.indexOf(a['Catch Method']), methodSortOrder.indexOf(b['Catch Method']));
-            
-        })
+        gameList[game].sort((a,b) => d3.ascending(methodSortOrder.indexOf(a['Catch Method']), methodSortOrder.indexOf(b['Catch Method']))) || d3.ascending(a['Catch Method'],b['Catch Method']);
         gameList[game].sort(function (a,b) {return d3.ascending(a['Route'], b['Route']);});
     }
     let distToWalk = 0; //distance to final location from current position
@@ -629,8 +626,8 @@ const routeData = async function () {
         row.append('td')
         .append('img')
         .attr("src", `images/${routePoke[i]['Pokemon Name'].replace('\'', '')
-                .replace('(Female)', '_female').replace('(Male)', '_male')
-                .replace('. ', '_').toLowerCase()}.png`) //Append pokemon photo
+                .replace('\u2640', '_female').replace('\u2642', '_male')
+                .replace('. ', '_').replace('Ghost Marowak','marowak').toLowerCase()}.png`) //Append pokemon photo
         .attr("width", 80)
         .attr("height", 80)
         row.append('td')
@@ -834,7 +831,7 @@ const routeData = async function () {
             .append('img')
             .attr("src", `images/${routePoke[i]['Pokemon Name'].replace('\'', '')
                     .replace('(Female)', '_female').replace('(Male)', '_male')
-                    .replace('. ', '_').toLowerCase()}.png`) //Append pokemon photo
+                    .replace('. ', '_').replace('Ghost Marowak','marowak').toLowerCase()}.png`) //Append pokemon photo
             .attr("width", 80)
             .attr("height", 80)
             row.append('td')

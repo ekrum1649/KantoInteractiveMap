@@ -1,0 +1,525 @@
+Pokemon Name,Pokemon ID,Route,Catch Method,Levels,Encounter Chance
+Magikarp,129,Celadon City,Old Rod,5,100%
+Poliwag,060,Celadon City,Good Rod,10,50%
+Goldeen,118,Celadon City,Good Rod,10,50%
+Poliwhirl,061,Celadon City,Super Rod,23,50%
+Slowpoke,079,Celadon City,Super Rod,15,50%
+Eevee,133,Celadon City,Gift,25,One
+Abra,063,Game Corner,,6,120C
+Clefairy,035,Game Corner,,12,750C
+Nidorino,033,Game Corner,,17,1200C
+Pinsir,127,Game Corner,,20,2500C
+Dratini,147,Game Corner,,24,4600C
+Porygon,137,Game Corner,,18,6500C
+Raichu,026,Cerulean Cave#1F,Cave,53,4%
+Sandslash,028,Cerulean Cave#1F,Cave,52,10%
+Golbat,042,Cerulean Cave#1F,Cave,46,25%
+Parasect,047,Cerulean Cave#1F,Cave,52,5%
+Venomoth,049,Cerulean Cave#1F,Cave,49,10%
+Kadabra,064,Cerulean Cave#1F,Cave,49,5%
+Magneton,082,Cerulean Cave#1F,Cave,46,15%
+Dodrio,085,Cerulean Cave#1F,Cave,49,10%
+Hypno,097,Cerulean Cave#1F,Cave,46,15%
+Ditto,132,Cerulean Cave#1F,Cave,53,1%
+Magikarp,129,Cerulean Cave#1F,Old Rod,5,100%
+Poliwag,060,Cerulean Cave#1F,Good Rod,10,50%
+Goldeen,118,Cerulean Cave#1F,Good Rod,10,50%
+Slowbro,080,Cerulean Cave#1F,Super Rod,23,25%
+Kingler,099,Cerulean Cave#1F,Super Rod,23,25%
+Seadra,117,Cerulean Cave#1F,Super Rod,23,25%
+Seaking,119,Cerulean Cave#1F,Super Rod,23,25%
+Wigglytuff,040,Cerulean Cave#2F,Cave,54,5%
+Venomoth,049,Cerulean Cave#2F,Cave,51,15%
+Kadabra,064,Cerulean Cave#2F,Cave,51,15%
+Dodrio,085,Cerulean Cave#2F,Cave,51,25%
+Electrode,101,Cerulean Cave#2F,Cave,52,10%
+Marowak,105,Cerulean Cave#2F,Cave,52,10%
+Rhydon,112,Cerulean Cave#2F,Cave,52,10%
+Chansey,113,Cerulean Cave#2F,Cave,56,5%
+Ditto,132,Cerulean Cave#2F,Cave,"55, 60",5%
+Raichu,026,Cerulean Cave#B1F,Cave,64,10%
+Sandslash,028,Cerulean Cave#B1F,Cave,57,5%
+Parasect,047,Cerulean Cave#B1F,Cave,64,10%
+Electrode,101,Cerulean Cave#B1F,Cave,55,15%
+Marowak,105,Cerulean Cave#B1F,Cave,55,15%
+Rhydon,112,Cerulean Cave#B1F,Cave,55,25%
+Chansey,113,Cerulean Cave#B1F,Cave,64,10%
+Ditto,132,Cerulean Cave#B1F,Cave,"63, 65, 67",10%
+Magikarp,129,Cerulean Cave#B1F,Old Rod,5,100%
+Poliwag,060,Cerulean Cave#B1F,Good Rod,10,50%
+Goldeen,118,Cerulean Cave#B1F,Good Rod,10,50%
+Slowbro,080,Cerulean Cave#B1F,Super Rod,23,25%
+Kingler,099,Cerulean Cave#B1F,Super Rod,23,25%
+Seadra,117,Cerulean Cave#B1F,Super Rod,23,25%
+Seaking,119,Cerulean Cave#B1F,Super Rod,23,25%
+Mewtwo,150,Cerulean Cave#B1F,Only one,70,One
+Magikarp,129,Cerulean City,Old Rod,5,100%
+Poliwag,060,Cerulean City,Good Rod,10,50%
+Goldeen,118,Cerulean City,Good Rod,10,50%
+Psyduck,054,Cerulean City,Super Rod,15,33%
+Krabby,098,Cerulean City,Super Rod,15,33%
+Goldeen,118,Cerulean City,Super Rod,15,33%
+Jynx,124,Cerulean City,Poliwhirl,The same as the Traded Pokémon,One
+Magikarp,129,Cinnabar Island,Old Rod,5,100%
+Poliwag,060,Cinnabar Island,Good Rod,10,50%
+Goldeen,118,Cinnabar Island,Good Rod,10,50%
+Shellder,090,Cinnabar Island,Super Rod,15,25%
+Horsea,116,Cinnabar Island,Super Rod,15,25%
+Goldeen,118,Cinnabar Island,Super Rod,15,25%
+Staryu,120,Cinnabar Island,Super Rod,15,25%
+Omanyte,138,Cinnabar Island,Helix Fossil,30,One
+Kabuto,140,Cinnabar Island,Dome Fossil,30,One
+Aerodactyl,142,Cinnabar Island,Old Amber,30,One
+Seel,086,Cinnabar Island,Ponyta,The same as the Traded Pokémon,One
+Electrode,101,Cinnabar Island,Raichu,The same as the Traded Pokémon,One
+Tangela,114,Cinnabar Island,Venonat,The same as the Traded Pokémon,One
+Diglett,050,Diglett's Cave,Cave,15-22,95%
+Dugtrio,051,Diglett's Cave,Cave,"29, 31",5%
+Hitmonlee,106,Saffron City,Gift,30,One
+Hitmonchan,107,Saffron City,Gift,30,One
+Magikarp,129,Fuchsia City,Old Rod,5,100%
+Poliwag,060,Fuchsia City,Good Rod,10,50%
+Goldeen,118,Fuchsia City,Good Rod,10,50%
+Krabby,098,Fuchsia City,Super Rod,15,25%
+Goldeen,118,Fuchsia City,Super Rod,15,25%
+Seaking,119,Fuchsia City,Super Rod,23,25%
+Magikarp,129,Fuchsia City,Super Rod,15,25%
+Magikarp,129,Indigo Plateau,Old Rod,5,100%
+Goldeen,118,Indigo Plateau,Good Rod,10,50%
+Poliwag,060,Indigo Plateau,Good Rod,10,50%
+Psyduck,054,Indigo Plateau,Super Rod,15,34%
+Krabby,098,Indigo Plateau,Super Rod,15,33%
+Goldeen,118,Indigo Plateau,Super Rod,15,33%
+Pikachu,025,Power Plant,Walking,"20, 24",25%
+Raichu,026,Power Plant,Walking,"33, 36",5%
+Magnemite,081,Power Plant,Walking,"21, 23",25%
+Magneton,082,Power Plant,Walking,"32, 35",10%
+Voltorb,100,Power Plant,Walking,"21, 23",35%
+Voltorb,100,Power Plant,Fake item,40,Six
+Electrode,101,Power Plant,Fake item,43,Two
+Zapdos,145,Power Plant,Only one,50,One
+Nidoran♀,029,Safari Zone#Center Area,Grass,22,25%
+Nidorina,030,Safari Zone#Center Area,Grass,31,10%
+Nidorino,033,Safari Zone#Center Area,Grass,31,5%
+Parasect,047,Safari Zone#Center Area,Grass,30,5%
+Venonat,048,Safari Zone#Center Area,Grass,22,15%
+Exeggcute,102,Safari Zone#Center Area,Grass,24-25,20%
+Rhyhorn,111,Safari Zone#Center Area,Grass,25,15%
+Chansey,113,Safari Zone#Center Area,Grass,23,1%
+Pinsir,127,Safari Zone#Center Area,Grass,23,4%
+Magikarp,129,Safari Zone#Center Area,Old Rod,5,100%
+Poliwag,060,Safari Zone#Center Area,Good Rod,10,50%
+Goldeen,118,Safari Zone#Center Area,Good Rod,10,50%
+Psyduck,054,Safari Zone#Center Area,Super Rod,15,25%
+Slowpoke,079,Safari Zone#Center Area,Super Rod,15,25%
+Krabby,098,Safari Zone#Center Area,Super Rod,15,25%
+Dratini,147,Safari Zone#Center Area,Super Rod,15,25%
+Nidoran♀,029,Safari Zone#Area 1,Grass,24,25%
+Nidorina,030,Safari Zone#Area 1,Grass,33,10%
+Nidoran♂,032,Safari Zone#Area 1,Grass,24,5%
+Paras,046,Safari Zone#Area 1,Grass,22,15%
+Parasect,047,Safari Zone#Area 1,Grass,25,5%
+Doduo,084,Safari Zone#Area 1,Grass,26,15%
+Exeggcute,102,Safari Zone#Area 1,Grass,"23, 25",20%
+Kangaskhan,115,Safari Zone#Area 1,Grass,25,4%
+Pinsir,127,Safari Zone#Area 1,Grass,28,1%
+Magikarp,129,Safari Zone#Area 1,Old Rod,5,100%
+Poliwag,060,Safari Zone#Area 1,Good Rod,10,50%
+Goldeen,118,Safari Zone#Area 1,Good Rod,10,50%
+Psyduck,054,Safari Zone#Area 1,Super Rod,15,25%
+Slowpoke,079,Safari Zone#Area 1,Super Rod,15,25%
+Krabby,098,Safari Zone#Area 1,Super Rod,15,25%
+Dratini,147,Safari Zone#Area 1,Super Rod,15,25%
+Nidoran♀,029,Safari Zone#Area 2,Grass,22,25%
+Nidorina,030,Safari Zone#Area 2,Grass,30,10%
+Nidorino,033,Safari Zone#Area 2,Grass,30,5%
+Paras,046,Safari Zone#Area 2,Grass,23,15%
+Venomoth,049,Safari Zone#Area 2,Grass,32,5%
+Exeggcute,102,Safari Zone#Area 2,Grass,"25, 27",20%
+Rhyhorn,111,Safari Zone#Area 2,Grass,26,15%
+Chansey,113,Safari Zone#Area 2,Grass,26,4%
+Tauros,128,Safari Zone#Area 2,Grass,28,1%
+Magikarp,129,Safari Zone#Area 2,Old Rod,5,100%
+Poliwag,060,Safari Zone#Area 2,Good Rod,10,50%
+Goldeen,118,Safari Zone#Area 2,Good Rod,10,50%
+Psyduck,054,Safari Zone#Area 2,Super Rod,15,25%
+Slowpoke,079,Safari Zone#Area 2,Super Rod,15,25%
+Krabby,098,Safari Zone#Area 2,Super Rod,15,25%
+Dratini,147,Safari Zone#Area 2,Super Rod,15,25%
+Nidoran♀,029,Safari Zone#Area 3,Grass,25,25%
+Nidorina,030,Safari Zone#Area 3,Grass,33,10%
+Nidoran♂,032,Safari Zone#Area 3,Grass,25,5%
+Venonat,048,Safari Zone#Area 3,Grass,23,15%
+Venomoth,049,Safari Zone#Area 3,Grass,31,5%
+Doduo,084,Safari Zone#Area 3,Grass,26,15%
+Exeggcute,102,Safari Zone#Area 3,Grass,"24, 26",20%
+Kangaskhan,115,Safari Zone#Area 3,Grass,28,1%
+Tauros,128,Safari Zone#Area 3,Grass,26,4%
+Magikarp,129,Safari Zone#Area 3,Old Rod,5,100%
+Poliwag,060,Safari Zone#Area 3,Good Rod,10,50%
+Goldeen,118,Safari Zone#Area 3,Good Rod,10,50%
+Psyduck,054,Safari Zone#Area 3,Super Rod,15,25%
+Slowpoke,079,Safari Zone#Area 3,Super Rod,15,25%
+Krabby,098,Safari Zone#Area 3,Super Rod,15,25%
+Dratini,147,Safari Zone#Area 3,Super Rod,15,25%
+Clefairy,035,Mt Moon#1F,Cave,8,1%
+Zubat,041,Mt Moon#1F,Cave,6-11,79%
+Paras,046,Mt Moon#1F,Cave,8,5%
+Geodude,074,Mt Moon#1F,Cave,"8, 10",15%
+Clefairy,035,Mt Moon#B1F,Cave,9,4%
+Zubat,041,Mt Moon#B1F,Cave,7-11,60%
+Paras,046,Mt Moon#B1F,Cave,10,10%
+Geodude,074,Mt Moon#B1F,Cave,7-9,26%
+Clefairy,035,Mt Moon#B2F,Cave,"10, 12",6%
+Zubat,041,Mt Moon#B2F,Cave,9-12,49%
+Paras,046,Mt Moon#B2F,Cave,"10, 12",15%
+Geodude,074,Mt Moon#B2F,Cave,9-10,30%
+Magikarp,129,Pallet Town,Old Rod,5,100%
+Poliwag,060,Pallet Town,Good Rod,10,50%
+Goldeen,118,Pallet Town,Good Rod,10,50%
+Poliwag,060,Pallet Town,Super Rod,15,50%
+Tentacool,072,Pallet Town,Super Rod,15,50%
+Vulpix,037,Pokemon Mansion ,1F,34,10%
+Ponyta,077,Pokemon Mansion ,1F,"28, 30, 32, 34",40%
+Grimer,088,Pokemon Mansion ,1F,"30, 32",40%
+Muk,089,Pokemon Mansion ,1F,37,4%
+Koffing,109,Pokemon Mansion ,1F,30,5%
+Weezing,110,Pokemon Mansion ,1F,39,1%
+Vulpix,037,Pokemon Mansion ,2F,32,25%
+Ponyta,077,Pokemon Mansion ,2F,"28, 30, 32",25%
+Grimer,088,Pokemon Mansion ,2F,"30, 34",40%
+Muk,089,Pokemon Mansion ,2F,39,4%
+Koffing,109,Pokemon Mansion ,2F,30,5%
+Weezing,110,Pokemon Mansion ,2F,37,1%
+Vulpix,037,Pokemon Mansion ,3F,33,15%
+Ponyta,077,Pokemon Mansion ,3F,"32, 36",14%
+Grimer,088,Pokemon Mansion ,3F,"31, 35",40%
+Muk,089,Pokemon Mansion ,3F,"38, 40",15%
+Koffing,109,Pokemon Mansion ,3F,34,5%
+Weezing,110,Pokemon Mansion ,3F,42,1%
+Magmar,126,Pokemon Mansion ,3F,34,10%
+Vulpix,037,Pokemon Mansion ,B1F,35,15%
+Ponyta,077,Pokemon Mansion ,B1F,"32, 34",15%
+Grimer,088,Pokemon Mansion ,B1F,"31, 33",50%
+Muk,089,Pokemon Mansion ,B1F,40,10%
+Koffing,109,Pokemon Mansion ,B1F,35,5%
+Weezing,110,Pokemon Mansion ,B1F,42,1%
+Magmar,126,Pokemon Mansion ,B1F,38,4%
+Gastly,092,Pokemon Tower,3F,18-24,90%
+Haunter,093,Pokemon Tower,3F,25,1%
+Cubone,104,Pokemon Tower,3F,"20, 22",9%
+Gastly,092,Pokemon Tower,4F,18-24,86%
+Haunter,093,Pokemon Tower,4F,25,5%
+Cubone,104,Pokemon Tower,4F,"20, 22",9%
+Gastly,092,Pokemon Tower,5F,18-24,86%
+Haunter,093,Pokemon Tower,5F,25,5%
+Cubone,104,Pokemon Tower,5F,"20, 22",9%
+Gastly,092,Pokemon Tower,6F,19-24,85%
+Haunter,093,Pokemon Tower,6F,"26, 28",6%
+Cubone,104,Pokemon Tower,6F,"22, 24",9%
+Gastly,092,Pokemon Tower,7F,20-24,75%
+Haunter,093,Pokemon Tower,7F,"28, 30",15%
+Cubone,104,Pokemon Tower,7F,"22, 24",10%
+Ghost Marowak,105,Pokemon Tower,Only one,30,One
+Bulbasaur,001,Pallet Town,Starter Pokémon,5,One
+Charmander,004,Pallet Town,Starter Pokémon,5,One
+Squirtle,007,Pallet Town,Starter Pokémon,5,One
+Zubat,041,Rock Tunnel#1F,Cave,15-18,55%
+Geodude,074,Rock Tunnel#1F,Cave,16-17,25%
+Machop,066,Rock Tunnel#1F,Cave,"15, 17",15%
+Onix,095,Rock Tunnel#1F,Cave,"13, 15",5%
+Zubat,041,Rock Tunnel#B1F,Cave,16-18,50%
+Machop,066,Rock Tunnel#B1F,Cave,"15, 17",15%
+Geodude,074,Rock Tunnel#B1F,Cave,16-18,26%
+Onix,095,Rock Tunnel#B1F,Cave,"13, 17",9%
+Pidgey,016,Route 1,Grass,2-5,50%
+Rattata,019,Route 1,Grass,2-4,50%
+Caterpie,010,Route 2,Grass,3-5,15%
+Pidgey,016,Route 2,Grass,3-5,45%
+Rattata,019,Route 2,Grass,2-5,40%
+Mr. Mime,122,Route 2,Abra,The same as the traded Pokémon,One
+Pidgey,016,Route 3,Grass,6-8,45%
+Spearow,021,Route 3,Grass,5-8,45%
+Jigglypuff,039,Route 3,Grass,"3, 5, 7",10%
+Rattata,019,Route 4,Grass,"8, 10, 12",40%
+Spearow,021,Route 4,Grass,"8, 10, 12",35%
+Sandshrew,027,Route 4,Grass,"6, 8, 10, 12",25%
+Magikarp,129,Route 4,Old Rod,5,100%
+Poliwag,060,Route 4,Good Rod,10,50%
+Goldeen,118,Route 4,Good Rod,10,50%
+Psyduck,054,Route 4,Super Rod,15,33%
+Krabby,098,Route 4,Super Rod,15,33%
+Goldeen,118,Route 4,Super Rod,15,33%
+Magikarp,129,Route 4,Gift,5,Purchase for 500
+Pidgey,016,Route 5,Grass,"13, 15-16",40%
+Meowth,052,Route 5,Grass,"10, 12, 14, 16",25%
+Bellsprout,069,Route 5,Grass,"13, 15-16",35%
+Pidgey,016,Route 6,Grass,"13, 15-16",40%
+Meowth,052,Route 6,Grass,"10, 12, 14, 16",25%
+Bellsprout,069,Route 6,Grass,"13, 15-16",35%
+Magikarp,129,Route 6,Old Rod,5,100%
+Poliwag,060,Route 6,Good Rod,10,50%
+Goldeen,118,Route 6,Good Rod,10,50%
+Shellder,090,Route 6,Super Rod,15,50%
+Krabby,098,Route 6,Super Rod,15,50%
+Pidgey,016,Route 7,Grass,"19, 22",30%
+Vulpix,037,Route 7,Grass,"18, 20",10%
+Meowth,052,Route 7,Grass,17-20,30%
+Bellsprout,069,Route 7,Grass,"19, 22",30%
+Pidgey,016,Route 8,Grass,"18, 20",35%
+Sandshrew,027,Route 8,Grass,"17, 19",20%
+Vulpix,037,Route 8,Grass,15-18,20%
+Meowth,052,Route 8,Grass,"18, 20",25%
+Rattata,019,Route 9,Grass,"14, 16-17",40%
+Spearow,021,Route 9,Grass,"13, 16-17",35%
+Sandshrew,027,Route 9,Grass,"11, 13, 15, 17",25%
+Spearow,021,Route 10,Grass,"13, 16-17",30%
+Sandshrew,027,Route 10,Grass,"11, 13, 15, 17",25%
+Voltorb,100,Route 10,Grass,"14, 16-17",45%
+Magikarp,129,Route 10,Old Rod,5,100%
+Poliwag,060,Route 10,Good Rod,10,50%
+Goldeen,118,Route 10,Good Rod,10,50%
+Poliwhirl,061,Route 10,Super Rod,23,50%
+Slowpoke,079,Route 10,Super Rod,15,50%
+Spearow,021,Route 11,Grass,"13, 15, 17",35%
+Sandshrew,027,Route 11,Grass,"12, 14-15",40%
+Drowzee,096,Route 11,Grass,"9, 11, 13, 15",25%
+Magikarp,129,Route 11,Old Rod,5,100%
+Poliwag,060,Route 11,Good Rod,10,50%
+Goldeen,118,Route 11,Good Rod,10,50%
+Shellder,090,Route 11,Super Rod,15,50%
+Krabby,098,Route 11,Super Rod,15,50%
+Nidorina,030,Route 11,Nidorino,The same as the Traded Pokémon,One
+Pidgey,016,Route 12,Grass,"23, 25, 27",35%
+Venonat,048,Route 12,Grass,"24, 26",20%
+Bellsprout,069,Route 12,Grass,"22, 24, 26",40%
+Weepinbell,070,Route 12,Grass,"28, 30",5%
+Magikarp,129,Route 12,Old Rod,5,100%
+Poliwag,060,Route 12,Good Rod,10,50%
+Goldeen,118,Route 12,Good Rod,10,50%
+Tentacool,072,Route 12,Super Rod,5,25%
+Krabby,098,Route 12,Super Rod,15,25%
+Goldeen,118,Route 12,Super Rod,15,25%
+Magikarp,129,Route 12,Super Rod,15,25%
+Snorlax,143,Route 12,Only one,30,One
+Pidgey,016,Route 13,Grass,"25, 27",30%
+Venonat,048,Route 13,Grass,"24, 26",20%
+Bellsprout,069,Route 13,Grass,"22, 24, 26",40%
+Weepinbell,070,Route 13,Grass,"28, 30",5%
+Ditto,132,Route 13,Grass,25,5%
+Magikarp,129,Route 13,Old Rod,5,100%
+Poliwag,060,Route 13,Good Rod,10,50%
+Goldeen,118,Route 13,Good Rod,10,50%
+Tentacool,072,Route 13,Super Rod,5,25%
+Krabby,098,Route 13,Super Rod,15,25%
+Goldeen,118,Route 13,Super Rod,15,25%
+Magikarp,129,Route 13,Super Rod,15,25%
+Pidgey,016,Route 14,Grass,26,15%
+Pidgeotto,017,Route 14,Grass,"28, 30",5%
+Venonat,048,Route 14,Grass,"24, 26",20%
+Bellsprout,069,Route 14,Grass,"22, 24, 26",40%
+Weepinbell,070,Route 14,Grass,30,5%
+Ditto,132,Route 14,Grass,23,15%
+Magikarp,129,Route 14,Old Rod,5,100%
+Poliwag,060,Route 14,Good Rod,10,50%
+Goldeen,118,Route 14,Good Rod,10,50%
+Pidgey,016,Route 15,Grass,23,15%
+Pidgeotto,017,Route 15,Grass,"28, 30",5%
+Venonat,048,Route 15,Grass,"26, 28",20%
+Bellsprout,069,Route 15,Grass,"22, 24, 26",40%
+Weepinbell,070,Route 15,Grass,30,5%
+Ditto,132,Route 15,Grass,26,15%
+Rattata,019,Route 16,Grass,"18, 20, 22",30%
+Raticate,020,Route 16,Grass,"23, 25",5%
+Spearow,021,Route 16,Grass,"20, 22",40%
+Doduo,084,Route 16,Grass,"18, 20, 22",25%
+Snorlax,143,Route 16,Only one,30,One
+Raticate,020,Route 17,Grass,"25, 27, 29",30%
+Spearow,021,Route 17,Grass,"20, 22",40%
+Fearow,022,Route 17,Grass,"25, 27",5%
+Doduo,084,Route 17,Grass,"24, 26, 28",25%
+Magikarp,129,Route 17,Old Rod,5,100%
+Poliwag,060,Route 17,Good Rod,10,50%
+Goldeen,118,Route 17,Good Rod,10,50%
+Tentacool,072,Route 17,Super Rod,5,25%
+Krabby,098,Route 17,Super Rod,15,25%
+Goldeen,118,Route 17,Super Rod,15,25%
+Magikarp,129,Route 17,Super Rod,15,25%
+Raticate,020,Route 18,Grass,"25, 29",20%
+Spearow,021,Route 18,Grass,"20, 22",40%
+Fearow,022,Route 18,Grass,"25, 27, 29",15%
+Doduo,084,Route 18,Grass,"24, 26, 28",25%
+Magikarp,129,Route 18,Old Rod,5,100%
+Poliwag,060,Route 18,Good Rod,10,50%
+Goldeen,118,Route 18,Good Rod,10,50%
+Tentacool,072,Route 18,Super Rod,5,25%
+Krabby,098,Route 18,Super Rod,15,25%
+Goldeen,118,Route 18,Super Rod,15,25%
+Magikarp,129,Route 18,Super Rod,15,25%
+Lickitung,108,Route 18,Slowbro,Same as the traded Pokémon,One
+Tentacool,072,Route 19,Surfing,"5, 10, 15, 20, 30, 35, 40",100%
+Magikarp,129,Route 19,Old Rod,5,100%
+Poliwag,060,Route 19,Good Rod,10,50%
+Goldeen,118,Route 19,Good Rod,10,50%
+Shellder,090,Route 19,Super Rod,15,25%
+Horsea,116,Route 19,Super Rod,15,25%
+Goldeen,118,Route 19,Super Rod,15,25%
+Staryu,120,Route 19,Super Rod,15,25%
+Tentacool,072,Route 20,Surfing,"5, 10, 15, 20, 30, 35, 40",100%
+Magikarp,129,Route 20,Old Rod,5,100%
+Poliwag,060,Route 20,Good Rod,10,50%
+Goldeen,118,Route 20,Good Rod,10,50%
+Shellder,090,Route 20,Super Rod,15,25%
+Horsea,116,Route 20,Super Rod,15,25%
+Goldeen,118,Route 20,Super Rod,15,25%
+Staryu,120,Route 20,Super Rod,15,25%
+Pidgey,016,Route 21,Grass,"21, 23",25%
+Pidgeotto,017,Route 21,Grass,"30, 32",15%
+Rattata,019,Route 21,Grass,"21, 23",35%
+Raticate,020,Route 21,Grass,30,15%
+Tangela,114,Route 21,Grass,"28, 30, 32",10%
+Tentacool,072,Route 21,Surfing,"5, 10, 15, 20, 30, 35, 40",100%
+Magikarp,129,Route 21,Old Rod,5,100%
+Poliwag,060,Route 21,Good Rod,10,50%
+Goldeen,118,Route 21,Good Rod,10,50%
+Shellder,090,Route 21,Super Rod,15,25%
+Horsea,116,Route 21,Super Rod,15,25%
+Goldeen,118,Route 21,Super Rod,15,25%
+Staryu,120,Route 21,Super Rod,15,25%
+Rattata,019,Route 22,Grass,2-4,45%
+Spearow,021,Route 22,Grass,"3, 5",10%
+Nidoran♀,029,Route 22,Grass,2-4,40%
+Nidoran♂,032,Route 22,Grass,3-4,5%
+Magikarp,129,Route 22,Old Rod,5,100%
+Poliwag,060,Route 22,Good Rod,10,50%
+Goldeen,118,Route 22,Good Rod,10,50%
+Poliwag,060,Route 22,Super Rod,15,50%
+Goldeen,118,Route 22,Super Rod,15,50%
+Spearow,021,Route 23,Grass,26,15%
+Fearow,022,Route 23,Grass,"38, 41, 43",25%
+Sandshrew,027,Route 23,Grass,26,25%
+Sandslash,028,Route 23,Grass,41,5%
+Ditto,132,Route 23,Grass,"33, 38, 43",30%
+Magikarp,129,Route 23,Old Rod,5,100%
+Poliwag,060,Route 23,Good Rod,10,50%
+Goldeen,118,Route 23,Good Rod,10,50%
+Slowbro,080,Route 23,Super Rod,23,25%
+Kingler,099,Route 23,Super Rod,23,25%
+Seadra,117,Route 23,Super Rod,23,25%
+Seaking,119,Route 23,Super Rod,23,25%
+Caterpie,010,Route 24,Grass,7,20%
+Metapod,011,Route 24,Grass,8,20%
+Pidgey,016,Route 24,Grass,12-13,20%
+Abra,063,Route 24,Grass,"8, 10, 12",15%
+Bellsprout,069,Route 24,Grass,12-14,25%
+Magikarp,129,Route 24,Old Rod,5,100%
+Poliwag,060,Route 24,Good Rod,10,50%
+Goldeen,118,Route 24,Good Rod,10,50%
+Psyduck,054,Route 24,Super Rod,15,33%
+Krabby,098,Route 24,Super Rod,15,33%
+Goldeen,118,Route 24,Super Rod,15,33%
+Caterpie,010,Route 25,Grass,8,20%
+Metapod,011,Route 25,Grass,9,20%
+Weedle,013,Route 25,Grass,8,1%
+Kakuna,014,Route 25,Grass,7,4%
+Pidgey,016,Route 25,Grass,13,15%
+Abra,063,Route 25,Grass,"10, 12",15%
+Bellsprout,069,Route 25,Grass,12-14,25%
+Magikarp,129,Route 25,Old Rod,5,100%
+Poliwag,060,Route 25,Good Rod,10,50%
+Goldeen,118,Route 25,Good Rod,10,50%
+Psyduck,054,Route 25,Super Rod,15,33%
+Krabby,098,Route 25,Super Rod,15,33%
+Goldeen,118,Route 25,Super Rod,15,33%
+Zubat,041,Seafoam Islands#1F,Cave,21,10%
+Golbat,042,Seafoam Islands#1F,Cave,29,5%
+Psyduck,054,Seafoam Islands#1F,Cave,30,20%
+Slowpoke,079,Seafoam Islands#1F,Cave,28,5%
+Slowbro,080,Seafoam Islands#1F,Cave,38,1%
+Seel,086,Seafoam Islands#1F,Cave,30,20%
+Krabby,098,Seafoam Islands#1F,Cave,"28, 30",20%
+Staryu,120,Seafoam Islands#1F,Cave,"28, 30",19%
+Psyduck,054,Seafoam Islands#B1F,Cave,"28, 30",15%
+Seel,086,Seafoam Islands#B1F,Cave,"28, 30",15%
+Dewgong,087,Seafoam Islands#B1F,Cave,38,4%
+Shellder,090,Seafoam Islands#B1F,Cave,30,20%
+Krabby,098,Seafoam Islands#B1F,Cave,"30, 32",30%
+Kingler,099,Seafoam Islands#B1F,Cave,37,1%
+Staryu,120,Seafoam Islands#B1F,Cave,32,15%
+Golbat,042,Seafoam Islands#B2F,Cave,30,4%
+Psyduck,054,Seafoam Islands#B2F,Cave,"30, 32",30%
+Golduck,055,Seafoam Islands#B2F,Cave,37,1%
+Seel,086,Seafoam Islands#B2F,Cave,"30, 32",35%
+Shellder,090,Seafoam Islands#B2F,Cave,30,10%
+Krabby,098,Seafoam Islands#B2F,Cave,"28, 30",15%
+Staryu,120,Seafoam Islands#B2F,Cave,28,5%
+Psyduck,054,Seafoam Islands#B3F,Cave,"31, 33",35%
+Seel,086,Seafoam Islands#B3F,Cave,"31, 33",30%
+Dewgong,087,Seafoam Islands#B3F,Cave,37,1%
+Krabby,098,Seafoam Islands#B3F,Cave,"29, 31",15%
+Kingler,099,Seafoam Islands#B3F,Cave,39,4%
+Staryu,120,Seafoam Islands#B3F,Cave,"29, 31",15%
+Magikarp,129,Seafoam Islands#B3F,Old Rod,5,100%
+Poliwag,060,Seafoam Islands#B3F,Good Rod,10,50%
+Goldeen,118,Seafoam Islands#B3F,Good Rod,10,50%
+Shellder,090,Seafoam Islands#B3F,Super Rod,15,25%
+Horsea,116,Seafoam Islands#B3F,Super Rod,15,25%
+Goldeen,118,Seafoam Islands#B3F,Super Rod,15,25%
+Staryu,120,Seafoam Islands#B3F,Super Rod,15,25%
+Golbat,042,Seafoam Islands#B4F,Cave,32,1%
+Psyduck,054,Seafoam Islands#B4F,Cave,"29, 31",15%
+Golduck,055,Seafoam Islands#B4F,Cave,39,4%
+Seel,086,Seafoam Islands#B4F,Cave,"29, 31",15%
+Krabby,098,Seafoam Islands#B4F,Cave,"31, 33",35%
+Staryu,120,Seafoam Islands#B4F,Cave,"31, 33",30%
+Magikarp,129,Seafoam Islands#B4F,Old Rod,5,100%
+Poliwag,060,Seafoam Islands#B4F,Good Rod,10,50%
+Goldeen,118,Seafoam Islands#B4F,Good Rod,10,50%
+Shellder,090,Seafoam Islands#B4F,Super Rod,15,25%
+Horsea,116,Seafoam Islands#B4F,Super Rod,15,25%
+Goldeen,118,Seafoam Islands#B4F,Super Rod,15,25%
+Staryu,120,Seafoam Islands#B4F,Super Rod,15,25%
+Articuno,144,Seafoam Islands#B4F,Only one,50,One
+Lapras,131,Saffron City,Gift,15,One
+Nidoran♀,029,Saffron City,Nidoran♂,The same as the traded Pokémon,One
+Farfetch'd,083,Vermilion City,Spearow,The same as the Traded Pokémon,One
+Magikarp,129,Vermilion City,Old Rod,5,100%
+Poliwag,060,Vermilion City,Good Rod,10,50%
+Goldeen,118,Vermilion City,Good Rod,10,50%
+Shellder,090,Vermilion City,Super Rod,15,50%
+Krabby,098,Vermilion City,Super Rod,15,50%
+Zubat,041,Victory Road#1F,Cave,22,15%
+Golbat,042,Victory Road#1F,Cave,41,5%
+Machop,066,Victory Road#1F,Cave,24,25%
+Machoke,067,Victory Road#1F,Cave,42,4%
+Geodude,074,Victory Road#1F,Cave,26,15%
+Graveler,075,Victory Road#1F,Cave,41,5%
+Onix,095,Victory Road#1F,Cave,"36, 39, 42",30%
+Marowak,105,Victory Road#1F,Cave,43,1%
+Zubat,041,Victory Road#2F,Cave,26,15%
+Golbat,042,Victory Road#2F,Cave,40,5%
+Machop,066,Victory Road#2F,Cave,22,25%
+Machoke,067,Victory Road#2F,Cave,41,5%
+Geodude,074,Victory Road#2F,Cave,24,15%
+Graveler,075,Victory Road#2F,Cave,43,1%
+Onix,095,Victory Road#2F,Cave,"36, 39, 42",30%
+Marowak,105,Victory Road#2F,Cave,40,4%
+Moltres,146,Victory Road#2F,Only one,50,One
+Zubat,041,Victory Road#3F,Cave,22,15%
+Golbat,042,Victory Road#3F,Cave,41,5%
+Venomoth,049,Victory Road#3F,Cave,40,10%
+Machop,066,Victory Road#3F,Cave,24,25%
+Machoke,067,Victory Road#3F,Cave,"42, 45",5%
+Geodude,074,Victory Road#3F,Cave,26,15%
+Graveler,075,Victory Road#3F,Cave,43,5%
+Onix,095,Victory Road#3F,Cave,"42, 45",20%
+Magikarp,129,Viridian City,Old Rod,5,100%
+Poliwag,060,Viridian City,Good Rod,10,50%
+Goldeen,118,Viridian City,Good Rod,10,50%
+Poliwag,060,Viridian City,Super Rod,15,50%
+Tentacool,072,Viridian City,Super Rod,15,50%
+Caterpie,010,Viridian Forest,Grass,3-5,45%
+Metapod,011,Viridian Forest,Grass,4-6,40%
+Weedle,013,Viridian Forest,Grass,3,5%
+Kakuna,014,Viridian Forest,Grass,4,5%
+Pikachu,025,Viridian Forest,Grass,"3, 5",5%
