@@ -244,6 +244,22 @@ const routeData = async function () {
             
         gameList[game].sort(function (a,b) {return d3.ascending(a['Route'], b['Route']);});
     }
+    const trainer_front = await fetch("Sprites/ptf1.png")
+    const fWalk1 = await fetch("Sprites/ptf2.png")
+    const fWalk2 = await fetch("Sprites/ptf3.png")
+    const trainer_back = await fetch("Sprites/ptb1.png")
+    const bWalk1 = await fetch("Sprites/ptb2.png")
+    const bWalk2 = await fetch("Sprites/ptb3.png")
+    const trainer_left = await fetch("Sprites/ptl1.png")
+    const lWalk = await fetch("Sprites/ptl2.png")
+    const trainer_right = await fetch("Sprites/ptr1.png")
+    const rWalk = await fetch("Sprites/ptr2.png")
+
+    const fAni = [trainer_front,fWalk1,trainer_front,fWalk2]
+    const bAni = [trainer_back,bWalk1,trainer_back,bWalk2]
+    const lAni = [trainer_left,lWalk]
+    const rAni = [trainer_right,rWalk]
+    
     let distToWalk = 0; //distance to final location from current position
     let cPX = 147; //Current X position of trainer
     let cPY = 397; //Current Y Position of trainer
