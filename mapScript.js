@@ -490,7 +490,7 @@ const routeData = async function () {
         
 
     
-    console.log("here1")
+    
     if (count < rList.length - 1) { //If more locations to go
         moveTimeouts.push(setTimeout(() => { //Wait until movement to next location is done, and then run for next location in list
         cPX = ndx;
