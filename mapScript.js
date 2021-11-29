@@ -244,21 +244,25 @@ const routeData = async function () {
             
         gameList[game].sort(function (a,b) {return d3.ascending(a['Route'], b['Route']);});
     }
-    const trainer_front = await fetch("Sprites/ptf1.png")
-    const fWalk1 = await fetch("Sprites/ptf2.png")
-    const fWalk2 = await fetch("Sprites/ptf3.png")
-    const trainer_back = await fetch("Sprites/ptb1.png")
-    const bWalk1 = await fetch("Sprites/ptb2.png")
-    const bWalk2 = await fetch("Sprites/ptb3.png")
-    const trainer_left = await fetch("Sprites/ptl1.png")
-    const lWalk = await fetch("Sprites/ptl2.png")
-    const trainer_right = await fetch("Sprites/ptr1.png")
-    const rWalk = await fetch("Sprites/ptr2.png")
+    const trainer_front = "Sprites/ptf1.png"
+    const fWalk = "Sprites/ptf.png"
+    const bWalk = "Sprites/ptb.png"
+    const lWalk = "Sprites/ptl.png"
+    const rWalk = "Sprites/ptr.png"
+    // const fWalk1 = "Sprites/ptfs.png"
+    // const fWalk2 = "Sprites/ptfos.png"
+    // const trainer_back = "Sprites/ptb1.png"
+    // const bWalk1 = "Sprites/ptbs.png"
+    // const bWalk2 = "Sprites/ptbos.png"
+    // const trainer_left = "Sprites/ptl1.png"
+    // const lWalk = "Sprites/ptls.png"
+    // const trainer_right = "Sprites/ptr1.png"
+    // const rWalk = "Sprites/ptrs.png"
 
-    const fAni = [trainer_front,fWalk1,trainer_front,fWalk2]
-    const bAni = [trainer_back,bWalk1,trainer_back,bWalk2]
-    const lAni = [trainer_left,lWalk]
-    const rAni = [trainer_right,rWalk]
+    // const fAni = [trainer_front,fWalk1,trainer_front,fWalk2]
+    // const bAni = [trainer_back,bWalk1,trainer_back,bWalk2]
+    // const lAni = [trainer_left,lWalk]
+    // const rAni = [trainer_right,rWalk]
     
     let distToWalk = 0; //distance to final location from current position
     let cPX = 147; //Current X position of trainer
@@ -290,7 +294,7 @@ const routeData = async function () {
     }
 
     chartArea2.append('image') //Animated trainer sprite (from bulbapedia)
-    .attr("xlink:href", "images/RedRGBwalkdown.png")
+    .attr("xlink:href", "Sprites/ptf1.png")
     .attr("height", 16)
     .attr("width", 16)
     .attr("x", 147)
@@ -458,12 +462,35 @@ const routeData = async function () {
     }
     let dist = Math.max(Math.abs(ndx-cPX),Math.abs(ndy-cPY)) //Distance to the next point
     
+    
+    let walkAni = fWalk
+    if (dist == Math.abs(ndx-cPX)) {
+        if (ndx-cPX < 0) {
+            walkAni = lWalk
+        }
+        else {
+            walkAni = rWalk
+        }
+    }
+    else {
+        if (ndy-cPY < 0) {
+            walkAni = bWalk
+        }
+    }
+
+    d3.select("#Trainer")
+        .attr("xlink:href",walkAni)
+
     d3.select("#Trainer")
         .transition().duration(dist*10) //Set speed based on distance so that it stays constant
         .ease(d3.easeLinear)
         .attr("x", ndx)
         .attr("y", ndy)
+        
+        
 
+    
+    console.log("here1")
     if (count < rList.length - 1) { //If more locations to go
         moveTimeouts.push(setTimeout(() => { //Wait until movement to next location is done, and then run for next location in list
         cPX = ndx;
@@ -477,6 +504,8 @@ const routeData = async function () {
     else {
         cPX = ndx; //update trainer position if this is last location in list
         cPY = ndy;
+        // d3.select("#Trainer")
+        //     .attr("xlink:href",trainer_front)
     }
     }
 
@@ -555,6 +584,7 @@ const routeData = async function () {
             .transition().duration(100)
             .attr("x", newX)
             .attr("y", newY)
+            .attr("xlink:href",trainer_front)
         trainerLoc = id
         cPX = newX;
         cPY = newY;
