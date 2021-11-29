@@ -7,7 +7,7 @@ github user- ptucham
 
 Data Sources: 
 
--Pokemon Location Data: https://bulbapedia.bulbagarden.net (Scraped programatically via python webscraper in data folder) 
+-Pokemon Location Data: https://bulbapedia.bulbagarden.net (Scraped programatically via python webscraper in data folder)    
 -Pokemon Pictures: https://www.kaggle.com/vishalsubbiah/pokemon-images-and-types  
 -Pokemon Stat Data (pokemon.csv): https://www.kaggle.com/rounakbanik/pokemon   
 -Trainer Sprite: Created myself using GIMP and converted to a set of apng files using apng assembler   
