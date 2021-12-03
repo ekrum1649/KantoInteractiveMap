@@ -7,6 +7,8 @@ github user- ptucham
 
 Data Sources: 
 
+-Map and Trainer art is based off of Pokemon Red Gameboy Color Game
+-Map created using MS Paint by ptucham
 -Pokemon Location Data: https://bulbapedia.bulbagarden.net (Scraped programatically via python webscraper in data folder)    
 -Pokemon Pictures: https://www.kaggle.com/vishalsubbiah/pokemon-images-and-types  
 -Pokemon Stat Data (pokemon.csv): https://www.kaggle.com/rounakbanik/pokemon   
